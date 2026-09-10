@@ -12,3 +12,7 @@ def sumar(a, b):
         float: Resultado de a + b
     """
     return a + b
+
+#responsable: jose rojas (eq04)
+def sumar_varios(*numeros):
+    return sum(numeros)

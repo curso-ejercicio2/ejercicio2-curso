@@ -1,6 +1,8 @@
 # operaciones/division.py
+# Responsable: Diego Rafael Mancilla Flores
+# Equipo: eq04
 
-def dividir(a, b):
+def dividir(a: float, b: float) -> float:
     """
     Divide dos números.
     

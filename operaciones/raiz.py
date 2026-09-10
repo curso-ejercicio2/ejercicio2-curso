@@ -1,7 +1,7 @@
 from validacion import validar_numero
  
  
-def raiz(numero, indice=2):
+def calcular_raiz(numero, indice=2):
     
     validar_numero(numero)
     validar_numero(indice)

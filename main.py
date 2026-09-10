@@ -7,6 +7,7 @@ def mostrar_menu():
     print("3. Multiplicación")
     print("4. Módulo")
     print("5. División")
+    print("9. Factorial")
     print("0. Salir")
     print("===============================")
 
@@ -49,6 +50,12 @@ def main():
                 a = float(input("Ingrese el dividendo: "))
                 b = float(input("Ingrese el divisor: "))
                 print(f"Resultado: {division.dividir(a, b)}")
+            
+            elif opcion == "9":
+                from operaciones import factorial
+                n = float(input("Ingrese el número: "))
+                print(f"Resultado: {factorial.calcular_factorial(n)}")
+
             
             else:
                 print("Opción no válida")

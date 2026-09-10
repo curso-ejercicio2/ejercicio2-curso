@@ -1,10 +1,4 @@
-from validacion import validar_numero
- 
- 
 def calcular_raiz(numero, indice=2):
-    
-    validar_numero(numero)
-    validar_numero(indice)
  
     if indice == 0:
         raise ValueError("El índice de la raíz no puede ser 0.")

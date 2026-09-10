@@ -3,6 +3,9 @@
 
 
 
+from operaciones import raiz
+
+
 def mostrar_menu():
     print("\n=== CALCULADORA - EJERCICIO 2 ===")
     print("1. Suma")
@@ -11,6 +14,7 @@ def mostrar_menu():
     print("4. Módulo")
     print("5. División")
     print("6. Potencia")
+    print("8. Raíz cuadrada")
     print("0. Salir")
     print("===============================")
 
@@ -59,7 +63,12 @@ def main():
                 a = float(input("Ingrese la base: "))
                 b = float(input("Ingrese el exponente: "))
                 print(f"Resultado: {potencia.calcular_potencia(a, b)}")
-                        
+                
+            elif opcion == "8":
+                num_base = float(input("Ingrese el número (base): "))
+                num_indice = float(input("Ingrese el índice de la raíz: "))
+                resultado =   raiz.calcular(num_base, num_indice)
+                print(f"Resultado: {resultado}")           
             else:
                 print("Opción no válida")
         

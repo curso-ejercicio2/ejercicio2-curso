@@ -8,6 +8,7 @@ def mostrar_menu():
     print("4. Módulo")
     print("5. División")
     print("9. Factorial")
+    print("10. Fibonacci")
     print("0. Salir")
     print("===============================")
 
@@ -56,6 +57,11 @@ def main():
                 n = float(input("Ingrese el número: "))
                 print(f"Resultado: {factorial.calcular_factorial(n)}")
 
+
+            elif opcion == "10": 
+                from operaciones import fibonacci 
+                n = int(input("Ingrese la posición de Fibonacci: "))
+                print(f"Resultado: {fibonacci.fibonacci(n)}")
             
             else:
                 print("Opción no válida")

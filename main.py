@@ -7,6 +7,7 @@ def mostrar_menu():
     print("3. Multiplicación")
     print("4. Módulo")
     print("5. División")
+    print("6. Raiz")
     print("0. Salir")
     print("===============================")
 
@@ -49,6 +50,11 @@ def main():
                 a = float(input("Ingrese el dividendo: "))
                 b = float(input("Ingrese el divisor: "))
                 print(f"Resultado: {division.dividir(a, b)}")
+                
+            elif opcion == "6":
+                from operaciones import raiz
+                a = float(input("Ingrese el número: "))
+                print(f"Resultado: {raiz.calcular_raiz(a)}")
             
             else:
                 print("Opción no válida")

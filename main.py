@@ -8,6 +8,7 @@ def mostrar_menu():
     print("4. Módulo")
     print("5. División")
     print("9. Factorial")
+    print("10. Permutacion")
     print("0. Salir")
     print("===============================")
 
@@ -55,6 +56,12 @@ def main():
                 from operaciones import factorial
                 n = float(input("Ingrese el número: "))
                 print(f"Resultado: {factorial.calcular_factorial(n)}")
+                
+            elif opcion == "10":
+                from operaciones import permutacion
+                n = int(input("Ingrese n: "))
+                r = int(input("Ingrese r: "))
+                print(f"Resultado: {permutacion.calcular_permutaciones(n, r)}")
 
             
             else:

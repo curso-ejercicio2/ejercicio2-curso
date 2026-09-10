@@ -1,5 +1,6 @@
 # operaciones/modulo.py
-# Responsable: Francisco Lazarte Salazar
+# Responsable: Francisco Lazarte Salazar(eq02)
+
 def calcular_modulo(a, b):
     """
     Calcula el módulo (resto) de a dividido por b.

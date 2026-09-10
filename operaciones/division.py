@@ -17,8 +17,9 @@ def dividir(a, b):
     if b == 0:
         raise ValueError("No se puede dividir por cero")
     return a / b
-    
-def dividir_elementos(lista, divisor):
+
+# Responsable: Santiago Huapalla (eq03)
+def dividir_lista(lista, divisor):
     """Divide cada elemento de una lista entre un número divisor.
 
     Args:

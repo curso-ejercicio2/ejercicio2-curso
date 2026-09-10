@@ -1,5 +1,5 @@
 # operaciones/modulo.py
-
+# Responsable: Francisco Lazarte Salazar
 def calcular_modulo(a, b):
     """
     Calcula el módulo (resto) de a dividido por b.
@@ -17,3 +17,18 @@ def calcular_modulo(a, b):
     if b == 0:
         raise ValueError("No se puede calcular el módulo con divisor cero")
     return a % b
+
+def modulo_lista(lista, divisor):
+    """
+    Calcula el módulo de cada elemento de una lista respecto a un divisor fijo.
+    
+    Args:
+        lista (list): Lista de números (dividendos)
+        divisor (float): Divisor
+    
+    Returns:
+        list: Lista con los restos de cada división
+    """
+    if divisor == 0:
+        raise ValueError("No se puede calcular el módulo con divisor cero")
+    return [num % divisor for num in lista]

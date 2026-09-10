@@ -1,4 +1,6 @@
-# Responsable: Alex Saavedra (eq07)
+# operaciones/porcentaje.py
+
+# Responsable: Alex Cristian Saavedra Veliz (eq07)
 
 def porcentaje(total: float, porcentaje: float) -> float:
     """Calcula el porcentaje de una cantidad base.

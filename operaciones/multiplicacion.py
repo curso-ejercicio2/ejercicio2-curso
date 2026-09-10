@@ -1,4 +1,6 @@
 # operaciones/multiplicacion.py
+#Responsable : Darlin Almanza (eq02)
+
 
 def multiplicar(a, b):
     """
@@ -13,6 +15,7 @@ def multiplicar(a, b):
     """
     return a * b
 
+# Responsable: Darlin Almanza (eq02)
 def multiplicar_matriz (matriz_a, matriz_b):
     filas_a = len(matriz_a)
     columnas_a = len(matriz_a[0])
@@ -26,3 +29,4 @@ def multiplicar_matriz (matriz_a, matriz_b):
                 resultado[i][j] += matriz_a[i][k] * matriz_b[k][j]
 
     return resultado
+

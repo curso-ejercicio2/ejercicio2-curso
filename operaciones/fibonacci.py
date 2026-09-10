@@ -1,4 +1,5 @@
 # operaciones/fibonacci.py
+
 def fibonacci(n):
     """
     Calcula el número de Fibonacci en una posición dada.

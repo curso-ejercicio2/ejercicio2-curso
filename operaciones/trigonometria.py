@@ -3,11 +3,12 @@ import math
 
 class FuncionesTrigonometricas:
     """Calcula funciones trigonometricas usando angulos en grados."""
-
+    #Mantener estaticos para mejor manejo en estos casos 
+    
     @staticmethod
     def seno(angulo):
         return math.sin(math.radians(angulo))
-
+    
     @staticmethod
     def coseno(angulo):
         return math.cos(math.radians(angulo))

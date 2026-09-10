@@ -16,6 +16,7 @@ def mostrar_menu():
     print("6. Potencia")
     print("7. Promedio")
     print("8. Raíz cuadrada")
+    print("9. Factorial")
     print("0. Salir")
     print("===============================")
 
@@ -78,6 +79,12 @@ def main():
                 resultado =   raiz.calcular(num_base, num_indice)
                 print(f"Resultado: {resultado}")           
 
+            elif opcion == "9":
+                from operaciones import factorial
+                n = float(input("Ingrese el número: "))
+                print(f"Resultado: {factorial.calcular_factorial(n)}")
+
+        
             else:
                 print("Opción no válida")
         

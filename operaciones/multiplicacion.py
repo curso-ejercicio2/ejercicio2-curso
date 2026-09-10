@@ -1,4 +1,6 @@
 # operaciones/multiplicacion.py
+# Responsable: Jhosias Daza Albornoz
+# Responsable: Juan Carlos Anagua Kahuana
 
 def multiplicar(a, b):
     """

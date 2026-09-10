@@ -7,6 +7,7 @@ def mostrar_menu():
     print("3. Multiplicación")
     print("4. Módulo")
     print("5. División")
+    print("6. Funciones trigonométricas")
     print("9. Factorial")
     print("0. Salir")
     print("===============================")
@@ -50,6 +51,27 @@ def main():
                 a = float(input("Ingrese el dividendo: "))
                 b = float(input("Ingrese el divisor: "))
                 print(f"Resultado: {division.dividir(a, b)}")
+             elif opcion == "6":
+                from operaciones.trigonometria import FuncionesTrigonometricas
+
+                print("1. Seno")
+                print("2. Coseno")
+                print("3. Tangente")
+                funcion = input("Seleccione una función: ")
+                angulo = float(input("Ingrese el ángulo en grados: "))
+                funciones = FuncionesTrigonometricas()
+
+                if funcion == "1":
+                    resultado = funciones.seno(angulo)
+                elif funcion == "2":
+                    resultado = funciones.coseno(angulo)
+                elif funcion == "3":
+                    resultado = funciones.tangente(angulo)
+                else:
+                    print("Función no válida")
+                    continue
+
+                print(f"Resultado: {resultado}")
             
             elif opcion == "9":
                 from operaciones import factorial

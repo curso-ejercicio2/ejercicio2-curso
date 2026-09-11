@@ -1,4 +1,5 @@
 # operaciones/modulo.py
+# Responsable: Francisco Lazarte Salazar(eq02)
 
 def calcular_modulo(a, b):
     """

@@ -28,6 +28,7 @@ def mostrar_menu():
     print("24. Fibonacci")
     print("25. Numero par o impar")
     print("26. Doble de un número")
+    print("27. Minimo Comun Multiplo (MCM)")
 
     print("0. Salir")
     print("===============================")
@@ -234,6 +235,12 @@ def main():
                 from operaciones import doble
                 a = float(input("Ingrese el número: "))
                 print(f"Resultado: {doble.doble(a)}")
+                
+            elif opcion == "27":
+                from operaciones import mcm
+                a = int(input("Ingrese el primer número: "))
+                b = int(input("Ingrese el segundo número: "))
+                print(f"Resultado: {mcm.mcm(a, b)}")
             
             else:
                 print("Opción no válida")

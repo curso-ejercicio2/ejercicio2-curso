@@ -1,3 +1,5 @@
+# operaciones/numero_primo.py - Verifica si un número es primo
+# Responsable: Carlos (eq06)
 def es_primo(n):
     """
     Retorna True si n es un número primo, False en caso contrario.

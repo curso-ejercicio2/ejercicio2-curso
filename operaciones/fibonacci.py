@@ -1,5 +1,5 @@
 # operaciones/fibonacci.py
-#Responsable: Jonas Vidal Zenzano (eq03)
+# Responsable: Jonas Vidal Zenzano (eq03)
 
 def fibonacci(n):
     """

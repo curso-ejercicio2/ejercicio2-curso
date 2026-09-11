@@ -1,5 +1,5 @@
 # operaciones/suma.py
-# Responsable: Ronald Escobar Vargas (eq02), Josue Lara Paqui (eq06)
+# Responsable: Ronald Escobar Vargas (eq02), Josue Lara Paqui (eq06) , Diego Alejandro Montaño quispe  (eq07)
 
 from .validaciones import es_numero
 
@@ -34,7 +34,17 @@ def suma_lista(lista):
         es_numero(elemento, f"El elemento '{elemento}'")
     return sum(lista)
 
+def suma_pares(lista):
+    """
+    Filtra y suma únicamente los números pares de una lista.
 
+    Args:
+        lista (list): Lista de números enteros o flotantes.
+
+    Returns:
+        float/int: Suma total de los números pares.
+    """
+    return sum(x for x in lista if x % 2 == 0)
 def sumar_multiples(*args):
     """
     Suma una cantidad arbitraria de números.
@@ -45,6 +55,4 @@ def sumar_multiples(*args):
     Returns:
         float: Suma total de todos los argumentos proporcionados.
     """
-    for valor in args:
-        es_numero(valor, f"El valor '{valor}'")
     return sum(args)

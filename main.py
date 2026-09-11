@@ -36,7 +36,8 @@ def mostrar_menu():
     print("32. Porcentaje redondeado (2 decimales)")
     print("33. Multiplicacion por sumas sucesivas")
     print("34. Combinación (nCr)")
-    print("35. Promedio")
+    print("35. Suma de números pares de una lista")
+    print("36. Promedio")
     print("0. Salir")
     print("===============================")
 
@@ -227,6 +228,7 @@ def main():
                 lista = [float(x.strip()) for x in datos.split(",")]
                 divisor = float(input("Ingrese el divisor: "))
                 print(f"Resultado: {division.dividir_lista(lista, divisor)}")
+
                 
             elif opcion == "24": 
                 from operaciones import fibonacci 
@@ -314,6 +316,13 @@ def main():
                 print(f"Resultado: {combinacion.calcular_combinaciones(n, r)}")
 
             elif opcion == "35":
+                # DEVELOP: Suma de números pares de una lista
+                from operaciones import suma
+                datos = input("Ingrese los números separados por coma: ")
+                lista = [float(x.strip()) for x in datos.split(",")]
+                print(f"Resultado (Suma de pares): {suma.suma_pares(lista)}")
+
+            elif opcion == "36":
                 # Responsable: Ticona Chura Stefani Mishel (eq04)
                 from operaciones import promedio
                 datos = input("Ingrese los números separados por coma: ")

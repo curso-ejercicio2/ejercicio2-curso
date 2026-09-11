@@ -37,7 +37,8 @@ def mostrar_menu():
     print("33. Multiplicacion por sumas sucesivas")
     print("34. Combinación (nCr)")
     print("35. Suma de números pares de una lista")
-    print("36. Resta de fracciones")
+    print("36. Promedio")
+    print("37. Resta de fracciones")
     print("0. Salir")
     print("===============================")
 
@@ -505,12 +506,20 @@ def main():
                 print(f"Resultado: {combinacion.calcular_combinaciones(n, r)}")
 
             elif opcion == "35":
+                # DEVELOP: Suma de números pares de una lista
                 from operaciones import suma
                 datos = input("Ingrese los números separados por coma: ")
                 lista = [float(x.strip()) for x in datos.split(",")]
                 print(f"Resultado (Suma de pares): {suma.suma_pares(lista)}")
 
             elif opcion == "36":
+                # Responsable: Ticona Chura Stefani Mishel (eq04)
+                from operaciones import promedio
+                datos = input("Ingrese los números separados por coma: ")
+                lista = [float(x.strip()) for x in datos.split(",")]
+                print(f"Resultado: {promedio.promedio(lista)}")
+
+            elif opcion == "37":
                 # Responsable: Oliver Cristian Quispe Rocha (eq04)
                 from operaciones import fracciones
 

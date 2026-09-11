@@ -22,7 +22,8 @@ def mostrar_menu():
     print("18. Potencia vectorizada (listas)")
     print("19. Multiplicación de una lista")
     print("20. Porcentaje")
-    print("21. Division de una lista")
+    print("21. Suma de Cuadrados")
+    print("22. Division de una lista")
     print("0. Salir")
     print("===============================")
 
@@ -99,7 +100,7 @@ def main():
                 from operaciones import factorial
                 n = float(input("Ingrese el número: "))
                 print(f"Resultado: {factorial.calcular_factorial(n)}")
-
+                
             elif opcion == "10":
                 from operaciones import permutacion
                 n = int(input("Ingrese n: "))
@@ -187,8 +188,14 @@ def main():
                 total = float(input("Ingrese la cantidad base (total): "))
                 pct = float(input("Ingrese el porcentaje a calcular (%): "))
                 print(f"Resultado: {porcentaje.porcentaje(total, pct)}")
+                
+            elif opcion == "21":  
+                from operaciones import suma_cuadrados
+                a = float(input("Ingrese el primer número: "))
+                b = float(input("Ingrese el segundo número: "))
+                print(f"Resultado: {suma_cuadrados.suma_cuadrados(a, b)}")
             
-            elif opcion == "21":
+            elif opcion == "22":
                 from operaciones import division
 
                 datos = input("Ingrese los números separados por coma: ")

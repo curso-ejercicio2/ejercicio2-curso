@@ -38,6 +38,7 @@ def mostrar_menu():
     print("34. Combinación (nCr)")
     print("35. Suma de números pares de una lista")
     print("36. Promedio")
+    print("37. Desviación estándar")
     print("0. Salir")
     print("===============================")
 
@@ -328,6 +329,12 @@ def main():
                 datos = input("Ingrese los números separados por coma: ")
                 lista = [float(x.strip()) for x in datos.split(",")]
                 print(f"Resultado: {promedio.promedio(lista)}")
+
+            elif opcion == "37":
+                from operaciones import desviacion_estandar
+                datos = input("Ingrese los números separados por coma: ")
+                lista = [float(x.strip()) for x in datos.split(",")]
+                print(f"Resultado: {desviacion_estandar.calcular_desviacion_estandar(lista)}")
 
             else:
                 print("Opción no válida")

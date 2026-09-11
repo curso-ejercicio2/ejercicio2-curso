@@ -20,6 +20,7 @@ def mostrar_menu():
     print("16. Módulo de una lista (con negativos)")
     print("17. División de positivos")
     print("18. Potencia vectorizada (listas)")
+    print("19. Logaritmo")
     print("0. Salir")
     print("===============================")
 
@@ -173,9 +174,22 @@ def main():
                 exponentes = [float(x.strip()) for x in datos_exp.split(",")]
                 print(f"Resultado: {potencia.potencia_vectorizada(bases, exponentes)}")
 
+            elif opcion == "19":
+                from operaciones import logaritmo
+                
+                num = float(input("Ingrese el número: "))
+                base_str = input("Ingrese la base (presione Enter para base 'e' / natural): ").strip()
+                
+                if base_str == "":
+                    print(f"Resultado: {logaritmo.calcular_logaritmo(num)}")
+                else:
+                    base = float(base_str)
+                    print(f"Resultado: {logaritmo.calcular_logaritmo(num, base)}")
+                
             else:
                 print("Opción no válida")
 
+            
         except ImportError as e:
             print(f"Error: No se pudo importar el módulo. {e}")
             print("La operación aún no está implementada por ningún equipo.")

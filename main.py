@@ -38,6 +38,7 @@ def mostrar_menu():
     print("34. Combinación (nCr)")
     print("35. Suma de números pares de una lista")
     print("36. Promedio")
+    print("38. Promedio exacto")
     print("0. Salir")
     print("===============================")
 
@@ -328,6 +329,16 @@ def main():
                 datos = input("Ingrese los números separados por coma: ")
                 lista = [float(x.strip()) for x in datos.split(",")]
                 print(f"Resultado: {promedio.promedio(lista)}")
+         
+            elif opcion == "38":
+                # Responsable: Nicole Flores Escalera (eq07)
+                from operaciones import promedio
+                try:
+                    datos = input("Ingrese los números separados por coma: ")
+                    lista = [float(x.strip()) for x in datos.split(",")]
+                    print(f"Resultado: {promedio.promedio_exacto(lista)}")
+                except ValueError as e:
+                    print(f"Error: {e}")
 
             else:
                 print("Opción no válida")

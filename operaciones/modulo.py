@@ -4,22 +4,12 @@
 # Responsable: Anelis Cordova Nigoevic (eq07)
 
 def calcular_modulo(a, b):
+
     """
     Calcula el módulo (resto) de a dividido por b.
-    
-    Args:
-        a (float): Dividendo
-        b (float): Divisor
-    
-    Returns:
-        float: Resto de la división a / b
-    
-    Raises:
-        ValueError: Si b es cero
     """
-    if b == 0:
-        raise ValueError("No se puede calcular el módulo con divisor cero")
-    return a % b
+
+    return modulo_seguro(a, b)
 
 
 def modulo_lista(lista, divisor):
@@ -33,8 +23,8 @@ def modulo_lista(lista, divisor):
     Returns:
         list: Lista con los restos de cada división
     """
-    if divisor == 0:
-        raise ValueError("No se puede calcular el módulo con divisor cero")
+    modulo_seguro(1, divisor)
+
     return [num % divisor for num in lista]
 
 
@@ -49,11 +39,12 @@ def modulo_lista_negativos(lista, divisor):
     Returns:
         list: Lista con los módulos calculados.
     """
-    if divisor == 0:
-        raise ValueError("No se puede calcular el módulo con divisor cero")
-    return [numero % divisor for numero in lista]
+    modulo_seguro(1, divisor)
 
-    def modulo_seguro(a, b):
+    return [numero % divisor for numero in lista]
+    
+
+def modulo_seguro(a, b):
     """
     Calcula el módulo verificando tipos y divisor cero.
 

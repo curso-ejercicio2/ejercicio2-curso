@@ -5,7 +5,6 @@
 
 from .validaciones import es_numero, lista_no_vacia
 
-
 def multiplicar(a, b):
     """
     Multiplica dos números.
@@ -66,5 +65,29 @@ def multiplicar_matriz(matriz_a, matriz_b):
         for j in range(columnas_b):
             for k in range(columnas_a):
                 resultado[i][j] += matriz_a[i][k] * matriz_b[k][j]
+
+    return resultado
+
+
+# Responsable: Joel Mauricio Mamani Mamani (eq06)
+def multiplicar_matriz_por_un_escalar (matriz, escalar):
+    """
+    Multiplica una matriz por un escalar.
+
+    Args:
+        matriz (list): Matriz de números
+        escalar (float): Número por el cual se multiplica la matriz
+
+    Returns:
+        list: Matriz resultante
+    """
+    filas = len(matriz)
+    columnas = len(matriz[0])
+
+    resultado = [[0 for _ in range(columnas)] for _ in range(filas)]
+
+    for i in range(filas):
+        for j in range(columnas):
+            resultado[i][j] = matriz[i][j] * escalar
 
     return resultado

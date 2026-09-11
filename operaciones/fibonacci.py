@@ -1,5 +1,7 @@
 # operaciones/fibonacci.py
-# Responsable: Jonas Vidal Zenzano (eq03)
+# Responsables:
+#   - Jonas Vidal Zenzano (eq03)          # autor original
+#   - Ian Nicolas Flores Candia (eq06)    # refactorizó y agregó validaciones
 
 from .validaciones import es_entero, no_negativo
 
@@ -24,4 +26,3 @@ def fibonacci(n):
         a, b = b, a + b
 
     return a
-

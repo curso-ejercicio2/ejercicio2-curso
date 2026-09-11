@@ -34,7 +34,7 @@ def mostrar_menu():
     print("30. Suma de multiples numeros")
     print("31. Resta de varios valores")
     print("32. Porcentaje redondeado (2 decimales)")
-
+    print("33. Multiplicacion por sumas sucesivas")
     print("0. Salir")
     print("===============================")
 
@@ -297,6 +297,13 @@ def main():
                     print("Error: Debe ingresar números válidos, no texto.")
                 except TypeError as e:
                     print(f"Error: {e}")
+                    
+             elif opcion=="33":
+                from operaciones.multiplicacion2 import multiplicar2
+                num=int(input("ingrece numero entero: "))
+                num2=int(input("ingrece numero entero: "))
+                resul =multiplicar2(num,num2)
+                print("Resultado es:",resul)
             
             else:
                 print("Opción no válida")

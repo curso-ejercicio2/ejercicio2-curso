@@ -1,5 +1,8 @@
 # main.py - Menú central de operaciones
 
+
+
+
 def mostrar_menu():
     print("\n=== CALCULADORA - EJERCICIO 2 ===")
     print("1. Suma")
@@ -7,7 +10,9 @@ def mostrar_menu():
     print("3. Multiplicación")
     print("4. Módulo")
     print("5. División")
+    print("6. Valor absoluto")
     print("9. Factorial")
+    print("10. Permutacion")
     print("10. Fibonacci")
     print("0. Salir")
     print("===============================")
@@ -51,11 +56,34 @@ def main():
                 a = float(input("Ingrese el dividendo: "))
                 b = float(input("Ingrese el divisor: "))
                 print(f"Resultado: {division.dividir(a, b)}")
+
+            elif opcion == "6":
+                from operaciones import valor_absoluto
+                a = float(input("Ingrese el número: "))
+                print(f"Resultado: {valor_absoluto.calcular_valor_absoluto(a)}")
             
             elif opcion == "9":
                 from operaciones import factorial
                 n = float(input("Ingrese el número: "))
                 print(f"Resultado: {factorial.calcular_factorial(n)}")
+                
+            elif opcion == "10":
+                from operaciones import permutacion
+                n = int(input("Ingrese n: "))
+                r = int(input("Ingrese r: "))
+                print(f"Resultado: {permutacion.calcular_permutaciones(n, r)}")
+
+            elif opcion == "6":
+                from operaciones import potencia
+                a = float(input("Ingrese la base: "))
+                b = float(input("Ingrese el exponente: "))
+                print(f"Resultado: {potencia.calcular_potencia(a, b)}")
+                
+            elif opcion == "8":
+                num_base = float(input("Ingrese el número (base): "))
+                num_indice = float(input("Ingrese el índice de la raíz: "))
+                resultado =   raiz.calcular(num_base, num_indice)
+                print(f"Resultado: {resultado}")           
 
 
             elif opcion == "10": 

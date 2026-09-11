@@ -13,7 +13,7 @@ def mostrar_menu():
     print("6. Valor absoluto")
     print("9. Factorial")
     print("10. Permutacion")
-    print("10. Fibonacci")
+    print("11. Fibonacci")
     print("0. Salir")
     print("===============================")
 
@@ -86,7 +86,7 @@ def main():
                 print(f"Resultado: {resultado}")           
 
 
-            elif opcion == "10": 
+            elif opcion == "11": 
                 from operaciones import fibonacci 
                 n = int(input("Ingrese la posición de Fibonacci: "))
                 print(f"Resultado: {fibonacci.fibonacci(n)}")

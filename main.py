@@ -21,6 +21,15 @@ def mostrar_menu():
     print("17. División de positivos")
     print("18. Potencia vectorizada (listas)")
     print("19. Multiplicación de una lista")
+    print("20. Porcentaje")
+    print("21. Suma de Cuadrados")
+    print("22. Máximo Común Divisor (MCD)")
+    print("23 Division de una lista")
+    print("24. Fibonacci")
+    print("25. Numero par o impar")
+    print("26. Doble de un número")
+    print("27. Minimo Comun Multiplo (MCM)")
+
     print("0. Salir")
     print("===============================")
 
@@ -97,7 +106,7 @@ def main():
                 from operaciones import factorial
                 n = float(input("Ingrese el número: "))
                 print(f"Resultado: {factorial.calcular_factorial(n)}")
-
+                
             elif opcion == "10":
                 from operaciones import permutacion
                 n = int(input("Ingrese n: "))
@@ -179,7 +188,60 @@ def main():
                 datos = input("Ingrese los números separados por coma (ej. 2,3,4): ")
                 valores = [float(x.strip()) for x in datos.split(",")]
                 print(f"Resultado: {multiplicacion.multiplicar_lista(valores)}")
+                
+            elif opcion == "20":
+                from operaciones import porcentaje
+                try:
+                    total = float(input("Ingrese la cantidad base (total): "))
+                    pct = float(input("Ingrese el porcentaje a calcular (%): "))
+                    print(f"Resultado: {porcentaje.porcentaje(total, pct)}")
+                except ValueError:
+                    print("Error: Debe ingresar números válidos, no texto.")
+                except TypeError as e:
+                    print(f"Error: {e}")    
+                
+            elif opcion == "21":  
+                from operaciones import suma_cuadrados
+                a = float(input("Ingrese el primer número: "))
+                b = float(input("Ingrese el segundo número: "))
+                print(f"Resultado: {suma_cuadrados.suma_cuadrados(a, b)}")
+            
+                
+            elif opcion == "22":
+               from operaciones import mcd
+               a = int(input("Ingrese el primer número: "))
+               b = int(input("Ingrese el segundo número: "))
+               print(f"Resultado: {mcd.calcular_mcd(a, b)}")
 
+            
+            elif opcion == "23":
+                from operaciones import division
+                datos = input("Ingrese los números separados por coma: ")
+                lista = [float(x.strip()) for x in datos.split(",")]
+                divisor = float(input("Ingrese el divisor: "))
+                print(f"Resultado: {division.dividir_lista(lista, divisor)}")
+                
+            elif opcion == "24": 
+                from operaciones import fibonacci 
+                n = int(input("Ingrese la posición de Fibonacci: "))
+                print(f"Resultado: {fibonacci.fibonacci(n)}")
+
+            elif opcion == "25":
+                from operaciones import Numero_par_impar
+                n = int(input("Ingrese el número: "))
+                print(Numero_par_impar.verificar_numero(n))
+
+            elif opcion == "26":
+                from operaciones import doble
+                a = float(input("Ingrese el número: "))
+                print(f"Resultado: {doble.doble(a)}")
+                
+            elif opcion == "27":
+                from operaciones import mcm
+                a = int(input("Ingrese el primer número: "))
+                b = int(input("Ingrese el segundo número: "))
+                print(f"Resultado: {mcm.mcm(a, b)}")
+            
             else:
                 print("Opción no válida")
 

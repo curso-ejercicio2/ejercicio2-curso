@@ -1,6 +1,6 @@
 # operaciones/mcd.py
 
-# Responsable: Abad Alvaro Villca Gutierrez (eq03)
+# Responsable: Abad Alvaro Villca Gutierrez (eq01)
 def calcular_mcd(a, b):
     """
     Calcula el máximo común divisor de dos números.

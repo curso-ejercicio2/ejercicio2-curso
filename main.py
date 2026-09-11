@@ -306,7 +306,6 @@ def main():
                 num2=int(input("ingrece numero entero: "))
                 resul =multiplicar2(num,num2)
                 print("Resultado es:",resul)
-            
             else:
                 print("Opción no válida")
 

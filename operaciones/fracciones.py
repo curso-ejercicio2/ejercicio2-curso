@@ -33,6 +33,16 @@ def restar_y_mostrar(num1: int, den1: int, num2: int, den2: int) -> None:
     print(f"{num1}/{den1} - {num2}/{den2} = {resultado}")
     print(f"Resultado decimal: {float(resultado)}")
 
+#responsable: Rogelio Cortez (eq08)
+def multiplicar_fracciones(num1: int , den1: int, num2: int, den2: int) -> Fraction:
+    if den1 == 0 or den2 == 0:
+        raise ValueError("El denominador no puede ser cero.")
+    
+    fraccion1 = Fraction(num1, den1)
+    fraccion2 = Fraction(num2, den2)
+    
+    return fraccion1 * fraccion2
+
 # Pruebas adicionales
 if __name__ == "__main__":
     print("\nPruebas adicionales:")

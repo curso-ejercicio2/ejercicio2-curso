@@ -40,11 +40,3 @@ def porcentaje_redondeado(total: float, pct: float) -> float:
         float: El resultado del porcentaje redondeado a 2 decimales.
     """
     return round(porcentaje(total, pct), 2)
-
-
-if __name__ == "__main__":
-    print("Prueba de la función original:")
-    print("porcentaje(1500, 18) =", porcentaje(1500, 18))
-
-    print("\nPrueba de la mejora:")
-    print("porcentaje_redondeado(1234.5, 7.3) =", porcentaje_redondeado(1234.5, 7.3))

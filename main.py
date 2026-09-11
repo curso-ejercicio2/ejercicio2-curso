@@ -37,6 +37,7 @@ def mostrar_menu():
     print("33. Multiplicacion por sumas sucesivas")
     print("34. Combinación (nCr)")
     print("35. Suma de números pares de una lista")
+    print("36. verificar si un numero es primo")
     print("0. Salir")
     print("===============================")
 
@@ -319,6 +320,15 @@ def main():
                 datos = input("Ingrese los números separados por coma: ")
                 lista = [float(x.strip()) for x in datos.split(",")]
                 print(f"Resultado (Suma de pares): {suma.suma_pares(lista)}")
+
+
+            elif opcion == "36":
+                from operaciones import primo
+                n = int(input("Ingrese el número: "))
+                if primo.es_primo(n):
+                    print(f"Resultado: {n} es primo")
+                else:
+                    print(f"Resultado: {n} no es primo")   
 
             else:
                 print("Opción no válida")

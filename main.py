@@ -31,6 +31,8 @@ def mostrar_menu():
     print("27. Minimo Comun Multiplo (MCM)")
     print("28. Multiplicacion de matriz por un escalar")
     print("29. Logaritmo")
+    print("30. Multiplicacion por sumas sucesivas")
+
 
     print("0. Salir")
     print("===============================")
@@ -266,6 +268,13 @@ def main():
                 else:
                     base = float(base_str)
                     print(f"Resultado: {logaritmo.calcular_logaritmo(num, base)}")
+
+            elif opcion=="30":
+                from operaciones.multiplicacion2 import multiplicar2
+                num=int(input("ingrece numero entero: "))
+                num2=int(input("ingrece numero entero: "))
+                resul =multiplicar2(num,num2)
+                print("Resultado es:",resul)
             
             else:
                 print("Opción no válida")

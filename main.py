@@ -27,6 +27,7 @@ def mostrar_menu():
     print("23 Division de una lista")
     print("24. Fibonacci")
     print("25. Numero par o impar")
+    print("26. Doble de un número")
 
     print("0. Salir")
     print("===============================")
@@ -228,6 +229,11 @@ def main():
                 from operaciones import Numero_par_impar
                 n = int(input("Ingrese el número: "))
                 print(Numero_par_impar.verificar_numero(n))
+
+            elif opcion == "26":
+                from operaciones import doble
+                a = float(input("Ingrese el número: "))
+                print(f"Resultado: {doble.doble(a)}")
             
             else:
                 print("Opción no válida")

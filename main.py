@@ -39,6 +39,7 @@ def mostrar_menu():
     print("35. Suma de números pares de una lista")
     print("36. Promedio")
     print("37. Resta de fracciones")
+    print("38. Rango de una lista")
     print("0. Salir")
     print("===============================")
 
@@ -552,6 +553,15 @@ def main():
                 print(
                     f"Resultado decimal: {float(resultado)}"
                 )
+
+            elif opcion == "38":
+                # Responsable: Mirko Coca Flores (eq01)
+                from operaciones.rango_lista import rango_lista
+
+                datos = input("Ingrese los números separados por coma: ")
+                valores = [float(x.strip()) for x in datos.split(",") if x.strip()]
+
+                print(f"Resultado: {rango_lista(valores)}")
 
             else:
                 print("Opción no válida")

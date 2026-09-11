@@ -1,5 +1,5 @@
 # operaciones/suma.py
-# Responsable: Ronald Escobar Vargas (eq02)
+# Responsable: Ronald Escobar Vargas (eq02), Josue Lara Paqui (eq06)
 
 
 def sumar(a, b):
@@ -27,3 +27,15 @@ def suma_lista(lista):
         float: Suma total de los elementos
     """
     return sum(lista)
+
+def sumar_multiples(*args):
+    """
+    Suma una cantidad arbitraria de números.
+
+    Args:
+        *args: Múltiples números a sumar separados por comas.
+
+    Returns:
+        float: Suma total de todos los argumentos proporcionados.
+    """
+    return sum(args)

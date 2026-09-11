@@ -1,6 +1,9 @@
 # operaciones/doble.py
 # Responsable: Fabio Inturias Vera (eq06)
 
+from .validaciones import es_numero
+
+
 def doble(a):
     """
     Calcula el doble de un número.
@@ -11,4 +14,5 @@ def doble(a):
     Returns:
         float: Resultado de multiplicar a por 2.
     """
+    es_numero(a, "El número")
     return a * 2

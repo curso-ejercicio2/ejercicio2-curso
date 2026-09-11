@@ -1,28 +1,25 @@
 # operaciones/modulo.py
 # Responsable: Francisco Lazarte Salazar (eq02)
 # Responsable: Gael Villarroel (eq02)
+# Responsable: Anelis Cordova Nigoevic (eq07)
 
 from .validaciones import es_numero, lista_no_vacia, no_cero
 
 
 def calcular_modulo(a, b):
+
     """
     Calcula el módulo (resto) de a dividido por b.
-    
-    Args:
-        a (float): Dividendo
-        b (float): Divisor
-    
-    Returns:
-        float: Resto de la división a / b
-    
-    Raises:
-        ValueError: Si b es cero
     """
+
+
+    return modulo_seguro(a, b)
+=======
     es_numero(a, "El dividendo")
     es_numero(b, "El divisor")
     no_cero(b, "El divisor")
     return a % b
+
 
 
 def modulo_lista(lista, divisor):
@@ -36,6 +33,9 @@ def modulo_lista(lista, divisor):
     Returns:
         list: Lista con los restos de cada división
     """
+
+    modulo_seguro(1, divisor)
+
     lista_no_vacia(lista)
     es_numero(divisor, "El divisor")
     no_cero(divisor, "El divisor")
@@ -55,9 +55,27 @@ def modulo_lista_negativos(lista, divisor):
     Returns:
         list: Lista con los módulos calculados.
     """
+
+    modulo_seguro(1, divisor)
+
+    return [numero % divisor for numero in lista]
+    
+
+def modulo_seguro(a, b):
+    """
+    Calcula el módulo verificando tipos y divisor cero.
+
+    """
+
+    if b == 0:
+        raise ValueError("No se puede calcular módulo con divisor cero")
+
+    return a % b
+
     lista_no_vacia(lista)
     es_numero(divisor, "El divisor")
     no_cero(divisor, "El divisor")
     for numero in lista:
         es_numero(numero, f"El elemento '{numero}'")
     return [numero % divisor for numero in lista]
+

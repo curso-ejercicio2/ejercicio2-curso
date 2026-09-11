@@ -25,6 +25,7 @@ def mostrar_menu():
     print("21. Suma de Cuadrados")
     print("22. Máximo Común Divisor (MCD)")
     print("23 Division de una lista")
+    print("24. Numero par o impar")
     print("0. Salir")
     print("===============================")
 
@@ -209,13 +210,18 @@ def main():
                print(f"Resultado: {mcd.calcular_mcd(a, b)}")
 
             
-            elif opcion == "23:
+            elif opcion == "23":
                 from operaciones import division
 
                 datos = input("Ingrese los números separados por coma: ")
                 lista = [float(x.strip()) for x in datos.split(",")]
                 divisor = float(input("Ingrese el divisor: "))
                 print(f"Resultado: {division.dividir_lista(lista, divisor)}")
+
+            elif opcion == "24":
+                from operaciones import Numero_par_impar
+                n = int(input("Ingrese el número: "))
+                print(Numero_par_impar.verificar_numero(n))
                 
             else:
                 print("Opción no válida")

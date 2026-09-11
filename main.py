@@ -11,6 +11,8 @@ def mostrar_menu():
     print("4. Módulo")
     print("5. División")
     print("6. Valor absoluto")
+    print("7. Potencia")
+    print("8. Raíz")
     print("9. Factorial")
     print("10. Permutacion")
     print("0. Salir")
@@ -36,7 +38,13 @@ def main():
                 from operaciones import resta
                 a = float(input("Ingrese el primer número: "))
                 b = float(input("Ingrese el segundo número: "))
-                print(f"Resultado: {resta.restar(a, b)}")
+                usar_varios = input("¿Restar varios valores además de estos dos? (s/n): ").strip().lower()
+                if usar_varios == "s":
+                    extras = input("Ingrese valores adicionales separados por coma (o dejar vacío): ").strip()
+                    valores_extra = [float(v) for v in extras.split(",") if v.strip()] if extras else []
+                    print(f"Resultado: {resta.restar_varios(a - b, *valores_extra)}")
+                else:
+                    print(f"Resultado: {resta.restar(a, b)}")
             
             elif opcion == "3":
                 from operaciones import multiplicacion
@@ -54,13 +62,30 @@ def main():
                 from operaciones import division
                 a = float(input("Ingrese el dividendo: "))
                 b = float(input("Ingrese el divisor: "))
-                print(f"Resultado: {division.dividir(a, b)}")
+                validar = input("¿Validar que ambos sean positivos? (s/n): ").strip().lower()
+                if validar == "s":
+                    print(f"Resultado: {division.dividir_positivos(a, b)}")
+                else:
+                    print(f"Resultado: {division.dividir(a, b)}")
 
             elif opcion == "6":
                 from operaciones import valor_absoluto
                 a = float(input("Ingrese el número: "))
                 print(f"Resultado: {valor_absoluto.calcular_valor_absoluto(a)}")
-            
+
+            elif opcion == "7":
+                from operaciones import potencia
+                a = float(input("Ingrese la base: "))
+                b = float(input("Ingrese el exponente: "))
+                print(f"Resultado: {potencia.calcular_potencia(a, b)}")
+
+            elif opcion == "8":
+                from operaciones import raiz
+                num_base = float(input("Ingrese el número (base): "))
+                num_indice = float(input("Ingrese el índice de la raíz: "))
+                resultado = raiz.calcular_raiz(num_base, num_indice)
+                print(f"Resultado: {resultado}")
+
             elif opcion == "9":
                 from operaciones import factorial
                 n = float(input("Ingrese el número: "))
@@ -72,17 +97,6 @@ def main():
                 r = int(input("Ingrese r: "))
                 print(f"Resultado: {permutacion.calcular_permutaciones(n, r)}")
 
-            elif opcion == "6":
-                from operaciones import potencia
-                a = float(input("Ingrese la base: "))
-                b = float(input("Ingrese el exponente: "))
-                print(f"Resultado: {potencia.calcular_potencia(a, b)}")
-                
-            elif opcion == "8":
-                num_base = float(input("Ingrese el número (base): "))
-                num_indice = float(input("Ingrese el índice de la raíz: "))
-                resultado =   raiz.calcular(num_base, num_indice)
-                print(f"Resultado: {resultado}")           
             else:
                 print("Opción no válida")
         

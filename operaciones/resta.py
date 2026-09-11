@@ -46,3 +46,29 @@ def restar_varios_mejorado(valor_inicial, *valores_a_restar):
             )
         resultado -= valor
     return resultado
+
+# Responsable: Miguel (eq07)
+
+def restar_lista(valores):
+    """
+    Resta una lista de números de forma acumulativa.
+
+    Args:
+        valores (list): Lista de números.
+
+    Returns:
+        float: Resultado de la resta acumulada.
+    """
+
+    if not valores:
+        raise ValueError("La lista no puede estar vacía")
+
+    for valor in valores:
+        es_numero(valor, f"El valor '{valor}'")
+
+    resultado = valores[0]
+
+    for valor in valores[1:]:
+        resultado -= valor
+
+    return resultado

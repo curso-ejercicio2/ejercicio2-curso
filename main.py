@@ -23,7 +23,8 @@ def mostrar_menu():
     print("19. Multiplicación de una lista")
     print("20. Porcentaje")
     print("21. Suma de Cuadrados")
-    print("22. Division de una lista")
+    print("22. Máximo Común Divisor (MCD)")
+    print("23 Division de una lista")
     print("0. Salir")
     print("===============================")
 
@@ -195,14 +196,22 @@ def main():
                 b = float(input("Ingrese el segundo número: "))
                 print(f"Resultado: {suma_cuadrados.suma_cuadrados(a, b)}")
             
+                
             elif opcion == "22":
+               from operaciones import mcd
+               a = int(input("Ingrese el primer número: "))
+               b = int(input("Ingrese el segundo número: "))
+               print(f"Resultado: {mcd.calcular_mcd(a, b)}")
+
+            
+            elif opcion == "23:
                 from operaciones import division
 
                 datos = input("Ingrese los números separados por coma: ")
                 lista = [float(x.strip()) for x in datos.split(",")]
                 divisor = float(input("Ingrese el divisor: "))
                 print(f"Resultado: {division.dividir_lista(lista, divisor)}")
-
+                
             else:
                 print("Opción no válida")
 

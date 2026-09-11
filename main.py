@@ -25,6 +25,15 @@ def mostrar_menu():
     print("21. Suma de Cuadrados")
     print("22. Máximo Común Divisor (MCD)")
     print("23 Division de una lista")
+    print("24. Fibonacci")
+    print("25. Numero par o impar")
+    print("26. Doble de un número")
+    print("27. Minimo Comun Multiplo (MCM)")
+    print("28. Multiplicacion de matriz por un escalar")
+    print("29. Logaritmo")
+    print("30. Suma de multiples numeros")
+    print("31. Resta de varios valores")
+
     print("0. Salir")
     print("===============================")
 
@@ -178,7 +187,7 @@ def main():
                 exponentes = [float(x.strip()) for x in datos_exp.split(",")]
                 print(f"Resultado: {potencia.potencia_vectorizada(bases, exponentes)}")
 
-            elif opcion == "19":
+            elif opcion == "19":    
                 from operaciones import multiplicacion
                 datos = input("Ingrese los números separados por coma (ej. 2,3,4): ")
                 valores = [float(x.strip()) for x in datos.split(",")]
@@ -209,20 +218,79 @@ def main():
                print(f"Resultado: {mcd.calcular_mcd(a, b)}")
 
             
-            elif opcion == "23:
+            elif opcion == "23":
                 from operaciones import division
-
                 datos = input("Ingrese los números separados por coma: ")
                 lista = [float(x.strip()) for x in datos.split(",")]
                 divisor = float(input("Ingrese el divisor: "))
                 print(f"Resultado: {division.dividir_lista(lista, divisor)}")
                 
+            elif opcion == "24": 
+                from operaciones import fibonacci 
+                n = int(input("Ingrese la posición de Fibonacci: "))
+                print(f"Resultado: {fibonacci.fibonacci(n)}")
+
+            elif opcion == "25":
+                from operaciones import Numero_par_impar
+                n = int(input("Ingrese el número: "))
+                print(Numero_par_impar.verificar_numero(n))
+
+            elif opcion == "26":
+                from operaciones import doble
+                a = float(input("Ingrese el número: "))
+                print(f"Resultado: {doble.doble(a)}")
+                
+            elif opcion == "27":
+                from operaciones import mcm
+                a = int(input("Ingrese el primer número: "))
+                b = int(input("Ingrese el segundo número: "))
+                print(f"Resultado: {mcm.mcm(a, b)}")
+
+            elif opcion == "28":
+                from operaciones import multiplicacion
+                print("Ingrese la matriz fila por fila (números separados por coma).")
+                print("Escriba una línea vacía para terminar.")
+                matriz = []
+                while True:
+                    fila = input("Fila: ")
+                    if fila == "":
+                        break
+                    matriz.append([float(x.strip()) for x in fila.split(",")])
+                escalar = float(input("Ingrese el escalar: "))
+                print(f"Resultado: {multiplicacion.multiplicar_matriz_por_un_escalar(matriz, escalar)}")
+
+            elif opcion == "29":
+                from operaciones import logaritmo
+                num = float(input("Ingrese el número: "))
+                base_str = input("Ingrese la base (presione Enter para base 'e' / natural): ").strip()
+                if base_str == "":
+                    print(f"Resultado: {logaritmo.calcular_logaritmo(num)}")
+                else:
+                    base = float(base_str)
+                    print(f"Resultado: {logaritmo.calcular_logaritmo(num, base)}")
+
+            elif opcion == "30":
+                from operaciones import suma
+                datos = input("Ingrese los números separados por coma: ")
+                valores = [float(x.strip()) for x in datos.split(",")]
+                print(f"Resultado: {suma.sumar_multiples(*valores)}")
+
+            elif opcion == "31":
+                from operaciones import resta
+                inicial = float(input("Ingrese el valor inicial: "))
+                datos = input("Ingrese los valores a restar separados por coma: ")
+                valores = [float(x.strip()) for x in datos.split(",")]
+                print(f"Resultado: {resta.restar_varios_mejorado(inicial, *valores)}")
+            
             else:
                 print("Opción no válida")
 
+            
         except ImportError as e:
             print(f"Error: No se pudo importar el módulo. {e}")
             print("La operación aún no está implementada por ningún equipo.")
+        except TypeError as e:
+            print(f"Error de tipo: {e}")
         except Exception as e:
             print(f"Error: {e}")
 

@@ -23,6 +23,3 @@ def decimal_a_binario(numero):
     binario = "".join(reversed(digitos))
     return f"-{binario}" if es_negativo else binario
 
-
-# Alias para mayor compatibilidad
-convertir_decimal_a_binario = decimal_a_binario

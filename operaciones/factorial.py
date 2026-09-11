@@ -1,5 +1,5 @@
 # operaciones/factorial.py - Cálculo de factorial
-
+# Responsables: Vanessa Flores (eq01), Luis Maturano (eq01)
 def calcular_factorial(n):
     """
     Calcula el factorial de un número entero no negativo n.

@@ -12,3 +12,9 @@ def restar(a, b):
         float: Resultado de a - b
     """
     return a - b
+    # Responsable: Beckerman Aguero Mallqui (eq01)
+def restar_varios(valor_inicial, *valores_a_restar):
+    resultado = valor_inicial
+    for valor in valores_a_restar:
+        resultado -= valor
+    return resultado

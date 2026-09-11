@@ -19,3 +19,7 @@ class FuncionesTrigonometricas:
         if math.isclose(coseno, 0, abs_tol=1e-12):
             raise ValueError("La tangente no esta definida para este angulo")
         return math.tan(math.radians(angulo))
+
+    @staticmethod
+    def arco_tangente(valor):
+        return math.degrees(math.atan(valor))

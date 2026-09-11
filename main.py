@@ -13,6 +13,7 @@ def mostrar_menu():
     print("6. Valor absoluto")
     print("9. Factorial")
     print("10. Permutacion")
+    print("11. Resta múltiple")
     print("0. Salir")
     print("===============================")
 
@@ -82,7 +83,14 @@ def main():
                 num_base = float(input("Ingrese el número (base): "))
                 num_indice = float(input("Ingrese el índice de la raíz: "))
                 resultado =   raiz.calcular(num_base, num_indice)
-                print(f"Resultado: {resultado}")           
+                print(f"Resultado: {resultado}")  
+            elif opcion == "11":
+                from operaciones.resta import restar_varios
+                numeros_str = input("Ingrese los números a restar separados por espacios: ")
+                numeros = [float(num) for num in numeros_str.split()]
+                if len(numeros) > 0:
+                    resultado = restar_varios(numeros[0], *numeros[1:])
+                    print(f"Resultado: {resultado}")       
             else:
                 print("Opción no válida")
         

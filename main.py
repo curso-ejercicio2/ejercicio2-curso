@@ -11,6 +11,7 @@ def mostrar_menu():
     print("4. Módulo")
     print("5. División")
     print("6. Valor absoluto")
+    print("7. Promedio")
     print("9. Factorial")
     print("10. Permutacion")
     print("0. Salir")
@@ -77,6 +78,13 @@ def main():
                 a = float(input("Ingrese la base: "))
                 b = float(input("Ingrese el exponente: "))
                 print(f"Resultado: {potencia.calcular_potencia(a, b)}")
+
+            elif opcion == "7":
+                from operaciones import promedio
+                print("\n--- OPERACIÓN: PROMEDIO ---")
+                valores = list(map(float, input("Ingrese los valores separados por espacios: ").split()))
+                resultado = promedio.promedio(valores)
+                print("El promedio es:", resultado)    
                 
             elif opcion == "8":
                 num_base = float(input("Ingrese el número (base): "))

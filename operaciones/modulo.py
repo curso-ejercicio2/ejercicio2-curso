@@ -17,3 +17,18 @@ def calcular_modulo(a, b):
     if b == 0:
         raise ValueError("No se puede calcular el módulo con divisor cero")
     return a % b
+
+def modulo_lista_negativos(lista, divisor):
+    """
+    Calcula el módulo de una lista incluyendo valores negativos.
+
+    Args:
+        lista (list): Lista de números.
+        divisor (float): Número divisor.
+
+    Returns:
+        list: Lista con los módulos calculados.
+    """
+    if divisor == 0:
+        raise ValueError("No se puede calcular el módulo con divisor cero")
+    return [numero % divisor for numero in lista]

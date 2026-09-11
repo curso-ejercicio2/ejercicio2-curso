@@ -30,7 +30,7 @@ def mostrar_menu():
     print("26. Doble de un número")
     print("27. Minimo Comun Multiplo (MCM)")
     print("28. Multiplicacion de matriz por un escalar")
-    print("29. Porcentaje redondeado (2 decimales)")   # <-- NUEVA OPCIÓN
+    print("29. Porcentaje redondeado (2 decimales)")
 
     print("0. Salir")
     print("===============================")

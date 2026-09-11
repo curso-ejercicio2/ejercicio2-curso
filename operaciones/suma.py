@@ -1,5 +1,5 @@
 # operaciones/suma.py
-# Responsable: Ronald Escobar Vargas (eq02) y Diego (eq07)
+# Responsable: Ronald Escobar Vargas (eq02) y Diego Alejandro Montaño quispe  (eq07)
 
 
 def sumar(a, b):

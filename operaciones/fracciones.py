@@ -1,9 +1,12 @@
 from fractions import Fraction
 
+from .validaciones import no_cero
+
+
 def restar_fracciones(num1: int, den1: int, num2: int, den2: int) -> Fraction:
-    if den1 == 0 or den2 == 0:
-        raise ValueError("El denominador no puede ser cero.")
-    
+    no_cero(den1, "El denominador de la primera fracción")
+    no_cero(den2, "El denominador de la segunda fracción")
+
     fraccion1 = Fraction(num1, den1)
     fraccion2 = Fraction(num2, den2)
     

@@ -1,6 +1,9 @@
 # operaciones/fibonacci.py
 # Responsable: Jonas Vidal Zenzano (eq03)
 
+from .validaciones import es_entero, no_negativo
+
+
 def fibonacci(n):
     """
     Calcula el número de Fibonacci en una posición dada.
@@ -11,6 +14,9 @@ def fibonacci(n):
     Returns:
         int: Número de Fibonacci correspondiente a la posición n
     """
+    no_negativo(n, "La posición")
+    es_entero(n, "La posición")
+
     a = 0
     b = 1
 

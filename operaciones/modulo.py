@@ -2,6 +2,9 @@
 # Responsable: Francisco Lazarte Salazar (eq02)
 # Responsable: Gael Villarroel (eq02)
 
+from .validaciones import es_numero, lista_no_vacia, no_cero
+
+
 def calcular_modulo(a, b):
     """
     Calcula el módulo (resto) de a dividido por b.
@@ -16,8 +19,9 @@ def calcular_modulo(a, b):
     Raises:
         ValueError: Si b es cero
     """
-    if b == 0:
-        raise ValueError("No se puede calcular el módulo con divisor cero")
+    es_numero(a, "El dividendo")
+    es_numero(b, "El divisor")
+    no_cero(b, "El divisor")
     return a % b
 
 
@@ -32,8 +36,11 @@ def modulo_lista(lista, divisor):
     Returns:
         list: Lista con los restos de cada división
     """
-    if divisor == 0:
-        raise ValueError("No se puede calcular el módulo con divisor cero")
+    lista_no_vacia(lista)
+    es_numero(divisor, "El divisor")
+    no_cero(divisor, "El divisor")
+    for num in lista:
+        es_numero(num, f"El elemento '{num}'")
     return [num % divisor for num in lista]
 
 
@@ -48,6 +55,9 @@ def modulo_lista_negativos(lista, divisor):
     Returns:
         list: Lista con los módulos calculados.
     """
-    if divisor == 0:
-        raise ValueError("No se puede calcular el módulo con divisor cero")
+    lista_no_vacia(lista)
+    es_numero(divisor, "El divisor")
+    no_cero(divisor, "El divisor")
+    for numero in lista:
+        es_numero(numero, f"El elemento '{numero}'")
     return [numero % divisor for numero in lista]

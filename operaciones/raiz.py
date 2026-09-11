@@ -1,3 +1,4 @@
+# Responsable: Santiago Piscoya (eq02)
 def calcular_raiz(numero, indice=2):
  
     if indice == 0:

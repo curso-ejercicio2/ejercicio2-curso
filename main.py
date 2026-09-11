@@ -39,6 +39,7 @@ def mostrar_menu():
     print("35. Suma de números pares de una lista")
     print("36. Promedio")
     print("37. Resta de fracciones")
+    print("38. Resta de una lista")
     print("0. Salir")
     print("===============================")
 
@@ -518,6 +519,7 @@ def main():
                 datos = input("Ingrese los números separados por coma: ")
                 lista = [float(x.strip()) for x in datos.split(",")]
                 print(f"Resultado: {promedio.promedio(lista)}")
+            
 
             elif opcion == "37":
                 # Responsable: Oliver Cristian Quispe Rocha (eq04)
@@ -552,6 +554,13 @@ def main():
                 print(
                     f"Resultado decimal: {float(resultado)}"
                 )
+
+            elif opcion == "38":
+                # Responsable: Vargas Mercado Miguel Angel (eq07)
+                from operaciones import resta
+                datos = input("Ingrese los números separados por coma: ")
+                lista = [float(x.strip()) for x in datos.split(",")]
+                print(f"Resultado: {resta.restar_lista(lista)}")
 
             else:
                 print("Opción no válida")

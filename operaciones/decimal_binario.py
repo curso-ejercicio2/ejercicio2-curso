@@ -1,5 +1,5 @@
 # operaciones/conversion_decimal_binario.py - Conversión de decimal a binario
-
+# Responsable: Rodrigo Mamani Rocha(eq02)
 from .validaciones import es_entero
 
 

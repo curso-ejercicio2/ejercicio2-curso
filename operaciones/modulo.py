@@ -1,6 +1,7 @@
 # operaciones/modulo.py
 # Responsable: Francisco Lazarte Salazar (eq02)
 # Responsable: Gael Villarroel (eq02)
+# Responsable: Anelis Cordova Nigoevic (eq07)
 
 def calcular_modulo(a, b):
     """
@@ -51,3 +52,14 @@ def modulo_lista_negativos(lista, divisor):
     if divisor == 0:
         raise ValueError("No se puede calcular el módulo con divisor cero")
     return [numero % divisor for numero in lista]
+
+    def modulo_seguro(a, b):
+    """
+    Calcula el módulo verificando tipos y divisor cero.
+
+    """
+
+    if b == 0:
+        raise ValueError("No se puede calcular módulo con divisor cero")
+
+    return a % b

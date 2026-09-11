@@ -32,6 +32,7 @@ def mostrar_menu():
     print("28. Multiplicacion de matriz por un escalar")
     print("29. Logaritmo")
     print("30. Suma de multiples numeros")
+    print("31. Resta de varios valores")
 
     print("0. Salir")
     print("===============================")
@@ -273,6 +274,13 @@ def main():
                 datos = input("Ingrese los números separados por coma: ")
                 valores = [float(x.strip()) for x in datos.split(",")]
                 print(f"Resultado: {suma.sumar_multiples(*valores)}")
+
+            elif opcion == "31":
+                from operaciones import resta
+                inicial = float(input("Ingrese el valor inicial: "))
+                datos = input("Ingrese los valores a restar separados por coma: ")
+                valores = [float(x.strip()) for x in datos.split(",")]
+                print(f"Resultado: {resta.restar_varios_mejorado(inicial, *valores)}")
             
             else:
                 print("Opción no válida")
@@ -281,6 +289,8 @@ def main():
         except ImportError as e:
             print(f"Error: No se pudo importar el módulo. {e}")
             print("La operación aún no está implementada por ningún equipo.")
+        except TypeError as e:
+            print(f"Error de tipo: {e}")
         except Exception as e:
             print(f"Error: {e}")
 

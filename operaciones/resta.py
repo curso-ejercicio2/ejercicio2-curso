@@ -38,16 +38,3 @@ def restar_varios_mejorado(valor_inicial, *valores_a_restar):
             )
         resultado -= valor
     return resultado
-
-
-# Bloque de prueba (solo se ejecuta si corres el archivo directamente)
-if __name__ == "__main__":
-    print("restar(10, 5) =", restar(10, 5))
-    print("restar_varios(100, 10, 20, 5) =", restar_varios(100, 10, 20, 5))
-    print("restar_varios_mejorado(100, 10, 20, 5) =", restar_varios_mejorado(100, 10, 20, 5))
-
-    try:
-        restar_varios_mejorado(100, "texto")
-    except TypeError as e:
-        print("Error capturado:", e)
-    

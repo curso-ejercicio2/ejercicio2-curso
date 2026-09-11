@@ -31,6 +31,7 @@ def mostrar_menu():
     print("27. Minimo Comun Multiplo (MCM)")
     print("28. Multiplicacion de matriz por un escalar")
     print("29. Logaritmo")
+    print("30. Suma de multiples numeros")
 
     print("0. Salir")
     print("===============================")
@@ -266,6 +267,12 @@ def main():
                 else:
                     base = float(base_str)
                     print(f"Resultado: {logaritmo.calcular_logaritmo(num, base)}")
+
+            elif opcion == "30":
+                from operaciones import suma
+                datos = input("Ingrese los números separados por coma: ")
+                valores = [float(x.strip()) for x in datos.split(",")]
+                print(f"Resultado: {suma.sumar_multiples(*valores)}")
             
             else:
                 print("Opción no válida")

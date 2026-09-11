@@ -1,5 +1,9 @@
 from fractions import Fraction
 
+from .validaciones import no_cero
+
+
+# Responsable: Mayra Arias Grageda (eq02)
 def restar_fracciones(num1: int, den1: int, num2: int, den2: int) -> Fraction:
     if den1 == 0 or den2 == 0:
         raise ValueError("El denominador no puede ser cero.")
@@ -32,6 +36,16 @@ def restar_y_mostrar(num1: int, den1: int, num2: int, den2: int) -> None:
     resultado = restar_fracciones(num1, den1, num2, den2)
     print(f"{num1}/{den1} - {num2}/{den2} = {resultado}")
     print(f"Resultado decimal: {float(resultado)}")
+
+#responsable: Rogelio Cortez (eq08)
+def multiplicar_fracciones(num1: int , den1: int, num2: int, den2: int) -> Fraction:
+    if den1 == 0 or den2 == 0:
+        raise ValueError("El denominador no puede ser cero.")
+    
+    fraccion1 = Fraction(num1, den1)
+    fraccion2 = Fraction(num2, den2)
+    
+    return fraccion1 * fraccion2
 
 # Pruebas adicionales
 if __name__ == "__main__":

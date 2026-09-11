@@ -39,7 +39,10 @@ def mostrar_menu():
     print("35. Suma de números pares de una lista")
     print("36. Promedio")
     print("37. Resta de fracciones")
-    print("38. verificar si un numero es primo")
+    print("38. Resta de una lista")
+    print("39. Número primo")
+    print("40. Verificar si un numero es primo")
+
     print("0. Salir")
     print("===============================")
 
@@ -520,6 +523,7 @@ def main():
                 datos = input("Ingrese los números separados por coma: ")
                 lista = [float(x.strip()) for x in datos.split(",")]
                 print(f"Resultado: {promedio.promedio(lista)}")
+            
 
             elif opcion == "37":
                 # Responsable: Oliver Cristian Quispe Rocha (eq04)
@@ -555,17 +559,34 @@ def main():
                     f"Resultado decimal: {float(resultado)}"
                 )
 
-            elif opcion == "38":
+    
+                # Responsable: Vargas Mercado Miguel Angel (eq07)
+                from operaciones import resta
+                datos = input("Ingrese los números separados por coma: ")
+                lista = [float(x.strip()) for x in datos.split(",")]
+                print(f"Resultado: {resta.restar_lista(lista)}")
+
+            elif opcion == "39":
+                from operaciones import numero_primo
                 
+                n = int(input("Ingrese un número entero: "))
+                
+                if numero_primo.es_primo(n):
+                        print(f"Resultado: {n} es primo")
+                else:
+                        print(f"Resultado: {n} no es primo")
+    
+
+            elif opcion == "40":
                 from operaciones import primo
                 n = int(input("Ingrese el número: "))
                 if primo.es_primo(n):
                     print(f"Resultado: {n} es primo")
                 else:
-                    print(f"Resultado: {n} no es primo")   
-
+                    print(f"Resultado: {n} no es primo")
             else:
-                print("Opción no válida")
+                print("opcion no valida")
+ 
 
         except ImportError as e:
             print(

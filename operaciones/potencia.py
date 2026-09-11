@@ -1,5 +1,5 @@
 # operaciones/potencia.py
-
+# REspponsable: Gabriel Torrico (eq02)
 def potencia(base: float, exponente: float) -> float:
     """
     Calcula la potencia de una base elevada a un exponente.

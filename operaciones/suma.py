@@ -1,6 +1,8 @@
 # operaciones/suma.py
 # Responsable: Ronald Escobar Vargas (eq02), Josue Lara Paqui (eq06)
 
+from .validaciones import es_numero
+
 
 def sumar(a, b):
     """
@@ -13,6 +15,8 @@ def sumar(a, b):
     Returns:
         float: Resultado de a + b
     """
+    es_numero(a, "El primer número")
+    es_numero(b, "El segundo número")
     return a + b
 
 
@@ -26,7 +30,10 @@ def suma_lista(lista):
     Returns:
         float: Suma total de los elementos
     """
+    for elemento in lista:
+        es_numero(elemento, f"El elemento '{elemento}'")
     return sum(lista)
+
 
 def sumar_multiples(*args):
     """
@@ -38,4 +45,6 @@ def sumar_multiples(*args):
     Returns:
         float: Suma total de todos los argumentos proporcionados.
     """
+    for valor in args:
+        es_numero(valor, f"El valor '{valor}'")
     return sum(args)

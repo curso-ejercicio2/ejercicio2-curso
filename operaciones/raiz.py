@@ -2,6 +2,9 @@
 # Responsable: (eq01)
 # Responsable: Santiago Piscoya (eq02)
 
+from .validaciones import es_numero, no_cero
+
+
 def calcular(base, indice):
     """Calcula la raíz n-ésima de un número (base ** (1/indice))."""
     if indice == 0:
@@ -12,8 +15,9 @@ def calcular(base, indice):
 
 
 def calcular_raiz(numero, indice=2):
-    if indice == 0:
-        raise ValueError("El índice de la raíz no puede ser 0.")
+    es_numero(numero, "El número")
+    es_numero(indice, "El índice de la raíz")
+    no_cero(indice, "El índice de la raíz")
 
     if numero < 0:
         if indice % 2 == 0:

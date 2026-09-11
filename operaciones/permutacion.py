@@ -1,13 +1,18 @@
 # operaciones/permutacion.py - Cálculo de permutacion
 # Responsables: Vanessa Flores (eq01), Luis Maturano (eq01)
 from .factorial import calcular_factorial
+from .validaciones import es_entero, no_negativo
+
+
 def calcular_permutaciones(n, r):
     """
     Calcula el número de permutaciones de n elementos tomados de r en r (nPr).
     Fórmula: n! / (n - r)!
     """
-    if r < 0 or n < 0:
-        raise ValueError("n y r deben ser no negativos")
+    no_negativo(n, "n")
+    no_negativo(r, "r")
+    es_entero(n, "n")
+    es_entero(r, "r")
     if r > n:
         raise ValueError("r no puede ser mayor que n")
 

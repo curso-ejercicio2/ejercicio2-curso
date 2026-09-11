@@ -1,12 +1,10 @@
 # operaciones/conversion_decimal_binario.py - Conversión de decimal a binario
 
+from .validaciones import es_entero
+
+
 def decimal_a_binario(numero):
-    if isinstance(numero, bool) or not isinstance(numero, (int, float)):
-        raise TypeError("El valor debe ser un número entero o decimal válido")
-
-    if numero != int(numero):
-        raise ValueError("Solo se pueden convertir números enteros a binario")
-
+    es_entero(numero, "El número")
     n = int(numero)
 
     if n == 0:

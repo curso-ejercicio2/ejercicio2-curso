@@ -33,6 +33,7 @@ def mostrar_menu():
     print("29. Logaritmo")
     print("30. Suma de multiples numeros")
     print("31. Resta de varios valores")
+    print("32. Porcentaje redondeado (2 decimales)")
 
     print("0. Salir")
     print("===============================")
@@ -260,6 +261,7 @@ def main():
                 print(f"Resultado: {multiplicacion.multiplicar_matriz_por_un_escalar(matriz, escalar)}")
 
             elif opcion == "29":
+                # DE DEVELOP: Logaritmo
                 from operaciones import logaritmo
                 num = float(input("Ingrese el número: "))
                 base_str = input("Ingrese la base (presione Enter para base 'e' / natural): ").strip()
@@ -270,17 +272,31 @@ def main():
                     print(f"Resultado: {logaritmo.calcular_logaritmo(num, base)}")
 
             elif opcion == "30":
+                # DE DEVELOP: Suma de múltiples números
                 from operaciones import suma
                 datos = input("Ingrese los números separados por coma: ")
                 valores = [float(x.strip()) for x in datos.split(",")]
                 print(f"Resultado: {suma.sumar_multiples(*valores)}")
 
             elif opcion == "31":
+                # DE DEVELOP: Resta de varios valores (versión mejorada)
                 from operaciones import resta
                 inicial = float(input("Ingrese el valor inicial: "))
                 datos = input("Ingrese los valores a restar separados por coma: ")
                 valores = [float(x.strip()) for x in datos.split(",")]
                 print(f"Resultado: {resta.restar_varios_mejorado(inicial, *valores)}")
+
+            elif opcion == "32":
+                # TU OPCIÓN NUEVA: Porcentaje redondeado a 2 decimales
+                from operaciones import porcentaje
+                try:
+                    total = float(input("Ingrese la cantidad base (total): "))
+                    pct = float(input("Ingrese el porcentaje a calcular (%): "))
+                    print(f"Resultado: {porcentaje.porcentaje_redondeado(total, pct)}")
+                except ValueError:
+                    print("Error: Debe ingresar números válidos, no texto.")
+                except TypeError as e:
+                    print(f"Error: {e}")
             
             else:
                 print("Opción no válida")

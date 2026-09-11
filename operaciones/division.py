@@ -1,5 +1,5 @@
 # operaciones/division.py
-
+# Responsable: Alexander J. Padilla (eq02)
 def dividir(a, b):
     """
     Divide dos números.

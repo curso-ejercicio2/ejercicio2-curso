@@ -30,6 +30,7 @@ def mostrar_menu():
     print("26. Doble de un número")
     print("27. Minimo Comun Multiplo (MCM)")
     print("28. Multiplicacion de matriz por un escalar")
+    print("29. Porcentaje redondeado (2 decimales)")   # <-- NUEVA OPCIÓN
 
     print("0. Salir")
     print("===============================")
@@ -255,6 +256,18 @@ def main():
                     matriz.append([float(x.strip()) for x in fila.split(",")])
                 escalar = float(input("Ingrese el escalar: "))
                 print(f"Resultado: {multiplicacion.multiplicar_matriz_por_un_escalar(matriz, escalar)}")
+
+            elif opcion == "29":
+                # NUEVA OPCIÓN: Porcentaje redondeado a 2 decimales
+                from operaciones import porcentaje
+                try:
+                    total = float(input("Ingrese la cantidad base (total): "))
+                    pct = float(input("Ingrese el porcentaje a calcular (%): "))
+                    print(f"Resultado: {porcentaje.porcentaje_redondeado(total, pct)}")
+                except ValueError:
+                    print("Error: Debe ingresar números válidos, no texto.")
+                except TypeError as e:
+                    print(f"Error: {e}")
             
             else:
                 print("Opción no válida")

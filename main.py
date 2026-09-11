@@ -41,7 +41,7 @@ def mostrar_menu():
     print("37. Resta de fracciones")
     print("38. Resta de una lista")
     print("39. Número primo")
-
+    print("40. Promedio exacto")
     print("0. Salir")
     print("===============================")
 
@@ -521,7 +521,7 @@ def main():
                 datos = input("Ingrese los números separados por coma: ")
                 lista = [float(x.strip()) for x in datos.split(",")]
                 print(f"Resultado: {promedio.promedio(lista)}")
-            
+ 
 
             elif opcion == "37":
                 # Responsable: Oliver Cristian Quispe Rocha (eq04)
@@ -551,7 +551,7 @@ def main():
 
                 print(
                     f"\nResultado: {num1}/{den1} - {num2}/{den2} = {resultado}"
-                )
+               
 
                 print(
                     f"Resultado decimal: {float(resultado)}"
@@ -575,6 +575,15 @@ def main():
                         print(f"Resultado: {n} es primo")
                 else:
                         print(f"Resultado: {n} no es primo")
+                  elif opcion == "40":
+                # Responsable: Nicole Flores Escalera (eq07)
+                from operaciones import promedio
+                try:
+                    datos = input("Ingrese los números separados por coma: ")
+                    lista = [float(x.strip()) for x in datos.split(",")]
+                    print(f"Resultado: {promedio.promedio_exacto(lista)}")
+                except ValueError as e:
+                    print(f"Error: {e}")
             else:
                 print("Opción no válida")
 

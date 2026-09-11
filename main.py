@@ -25,7 +25,9 @@ def mostrar_menu():
     print("21. Suma de Cuadrados")
     print("22. Máximo Común Divisor (MCD)")
     print("23 Division de una lista")
-    print("24. Numero par o impar")
+    print("24. Fibonacci")
+    print("25. Numero par o impar")
+
     print("0. Salir")
     print("===============================")
 
@@ -212,17 +214,21 @@ def main():
             
             elif opcion == "23":
                 from operaciones import division
-
                 datos = input("Ingrese los números separados por coma: ")
                 lista = [float(x.strip()) for x in datos.split(",")]
                 divisor = float(input("Ingrese el divisor: "))
                 print(f"Resultado: {division.dividir_lista(lista, divisor)}")
+                
+            elif opcion == "24": 
+                from operaciones import fibonacci 
+                n = int(input("Ingrese la posición de Fibonacci: "))
+                print(f"Resultado: {fibonacci.fibonacci(n)}")
 
-            elif opcion == "24":
+            elif opcion == "25":
                 from operaciones import Numero_par_impar
                 n = int(input("Ingrese el número: "))
                 print(Numero_par_impar.verificar_numero(n))
-                
+            
             else:
                 print("Opción no válida")
 

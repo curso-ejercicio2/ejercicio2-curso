@@ -13,6 +13,7 @@ def mostrar_menu():
     print("6. Valor absoluto")
     print("9. Factorial")
     print("10. Permutacion")
+    print("11. Porcentaje")
     print("0. Salir")
     print("===============================")
 
@@ -72,17 +73,12 @@ def main():
                 r = int(input("Ingrese r: "))
                 print(f"Resultado: {permutacion.calcular_permutaciones(n, r)}")
 
-            elif opcion == "6":
-                from operaciones import potencia
-                a = float(input("Ingrese la base: "))
-                b = float(input("Ingrese el exponente: "))
-                print(f"Resultado: {potencia.calcular_potencia(a, b)}")
-                
-            elif opcion == "8":
-                num_base = float(input("Ingrese el número (base): "))
-                num_indice = float(input("Ingrese el índice de la raíz: "))
-                resultado =   raiz.calcular(num_base, num_indice)
-                print(f"Resultado: {resultado}")           
+            elif opcion == "11":
+                from operaciones import porcentaje
+                total = float(input("Ingrese el número total: "))
+                p = float(input("Ingrese el porcentaje: "))
+                print(f"Resultado: {porcentaje.calcular_porcentaje(total, p)}")
+
             else:
                 print("Opción no válida")
         

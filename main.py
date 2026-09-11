@@ -22,6 +22,7 @@ def mostrar_menu():
     print("18. Potencia vectorizada (listas)")
     print("19. Multiplicación de una lista")
     print("20. Porcentaje")
+    print("21. Division de una lista")
     print("0. Salir")
     print("===============================")
 
@@ -186,6 +187,14 @@ def main():
                 total = float(input("Ingrese la cantidad base (total): "))
                 pct = float(input("Ingrese el porcentaje a calcular (%): "))
                 print(f"Resultado: {porcentaje.porcentaje(total, pct)}")
+            
+            elif opcion == "21":
+                from operaciones import division
+
+                datos = input("Ingrese los números separados por coma: ")
+                lista = [float(x.strip()) for x in datos.split(",")]
+                divisor = float(input("Ingrese el divisor: "))
+                print(f"Resultado: {division.dividir_lista(lista, divisor)}")
 
             else:
                 print("Opción no válida")

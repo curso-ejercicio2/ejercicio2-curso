@@ -1,5 +1,9 @@
 from fractions import Fraction
 
+from .validaciones import no_cero
+
+
+# Responsable: Mayra Arias Grageda (eq02)
 def restar_fracciones(num1: int, den1: int, num2: int, den2: int) -> Fraction:
     if den1 == 0 or den2 == 0:
         raise ValueError("El denominador no puede ser cero.")

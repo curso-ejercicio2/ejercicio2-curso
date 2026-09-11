@@ -44,7 +44,13 @@ def main():
                 from operaciones import resta
                 a = float(input("Ingrese el primer número: "))
                 b = float(input("Ingrese el segundo número: "))
-                print(f"Resultado: {resta.restar(a, b)}")
+                usar_varios = input("¿Restar varios valores además de estos dos? (s/n): ").strip().lower()
+                if usar_varios == "s":
+                    extras = input("Ingrese valores adicionales separados por coma (o dejar vacío): ").strip()
+                    valores_extra = [float(v) for v in extras.split(",") if v.strip()] if extras else []
+                    print(f"Resultado: {resta.restar_varios(a - b, *valores_extra)}")
+                else:
+                    print(f"Resultado: {resta.restar(a, b)}")
 
             elif opcion == "3":
                 from operaciones import multiplicacion
@@ -62,7 +68,11 @@ def main():
                 from operaciones import division
                 a = float(input("Ingrese el dividendo: "))
                 b = float(input("Ingrese el divisor: "))
-                print(f"Resultado: {division.dividir(a, b)}")
+                validar = input("¿Validar que ambos sean positivos? (s/n): ").strip().lower()
+                if validar == "s":
+                    print(f"Resultado: {division.dividir_positivos(a, b)}")
+                else:
+                    print(f"Resultado: {division.dividir(a, b)}")
 
             elif opcion == "6":
                 from operaciones import valor_absoluto
@@ -79,7 +89,8 @@ def main():
                 from operaciones import raiz
                 num_base = float(input("Ingrese el número (base): "))
                 num_indice = float(input("Ingrese el índice de la raíz: "))
-                print(f"Resultado: {raiz.calcular_raiz(num_base, num_indice)}")
+                resultado = raiz.calcular_raiz(num_base, num_indice)
+                print(f"Resultado: {resultado}")
 
             elif opcion == "9":
                 from operaciones import factorial

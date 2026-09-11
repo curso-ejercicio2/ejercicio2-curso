@@ -30,6 +30,7 @@ def mostrar_menu():
     print("26. Doble de un número")
     print("27. Minimo Comun Multiplo (MCM)")
     print("28. Multiplicacion de matriz por un escalar")
+    print("29. Logaritmo")
 
     print("0. Salir")
     print("===============================")
@@ -184,7 +185,7 @@ def main():
                 exponentes = [float(x.strip()) for x in datos_exp.split(",")]
                 print(f"Resultado: {potencia.potencia_vectorizada(bases, exponentes)}")
 
-            elif opcion == "19":
+            elif opcion == "19":    
                 from operaciones import multiplicacion
                 datos = input("Ingrese los números separados por coma (ej. 2,3,4): ")
                 valores = [float(x.strip()) for x in datos.split(",")]
@@ -255,10 +256,21 @@ def main():
                     matriz.append([float(x.strip()) for x in fila.split(",")])
                 escalar = float(input("Ingrese el escalar: "))
                 print(f"Resultado: {multiplicacion.multiplicar_matriz_por_un_escalar(matriz, escalar)}")
+
+            elif opcion == "29":
+                from operaciones import logaritmo
+                num = float(input("Ingrese el número: "))
+                base_str = input("Ingrese la base (presione Enter para base 'e' / natural): ").strip()
+                if base_str == "":
+                    print(f"Resultado: {logaritmo.calcular_logaritmo(num)}")
+                else:
+                    base = float(base_str)
+                    print(f"Resultado: {logaritmo.calcular_logaritmo(num, base)}")
             
             else:
                 print("Opción no válida")
 
+            
         except ImportError as e:
             print(f"Error: No se pudo importar el módulo. {e}")
             print("La operación aún no está implementada por ningún equipo.")

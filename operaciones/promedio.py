@@ -9,5 +9,3 @@ def promedio(numeros):
         cociente += 1
     
     return cociente
-
-print(promedio([4, 8, 12, 16]))  

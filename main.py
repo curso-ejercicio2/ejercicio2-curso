@@ -37,6 +37,7 @@ def mostrar_menu():
     print("33. Multiplicacion por sumas sucesivas")
     print("34. Combinación (nCr)")
     print("35. Suma de números pares de una lista")
+    print("36. Regla de tres")
     print("0. Salir")
     print("===============================")
 
@@ -319,6 +320,13 @@ def main():
                 datos = input("Ingrese los números separados por coma: ")
                 lista = [float(x.strip()) for x in datos.split(",")]
                 print(f"Resultado (Suma de pares): {suma.suma_pares(lista)}")
+
+            elif opcion == "36":
+                            from operaciones import regla_de_tres
+                            a = float(input("Ingrese el primer número: "))
+                            b = float(input("Ingrese el segundo número: "))
+                            c = float(input("Ingrese el tercer número: "))
+                            print(f"Resultado: {regla_de_tres.aplicar_regla_de_tres(a, b, c)}")
 
             else:
                 print("Opción no válida")

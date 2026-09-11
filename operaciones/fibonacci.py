@@ -1,5 +1,7 @@
 # operaciones/fibonacci.py
-# Responsable: Jonas Vidal Zenzano (eq03)
+# Responsables:
+#   - Jonas Vidal Zenzano (eq03)          # autor original
+#   - Ian Nicolas Flores Candia (eq06)    # refactorizó y agregó validaciones
 
 def fibonacci(n):
     """
@@ -11,6 +13,11 @@ def fibonacci(n):
     Returns:
         int: Número de Fibonacci correspondiente a la posición n
     """
+    if not isinstance(n, int):
+        raise TypeError("El índice debe ser un número entero")
+    if n < 0:
+        raise ValueError("El índice no puede ser negativo")
+
     a = 0
     b = 1
 
@@ -18,4 +25,3 @@ def fibonacci(n):
         a, b = b, a + b
 
     return a
-

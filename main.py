@@ -20,6 +20,7 @@ def mostrar_menu():
     print("16. Módulo de una lista (con negativos)")
     print("17. División de positivos")
     print("18. Potencia vectorizada (listas)")
+    print("19. Multiplicación de una lista")
     print("0. Salir")
     print("===============================")
 
@@ -172,6 +173,12 @@ def main():
                 datos_exp = input("Ingrese los exponentes separados por coma: ")
                 exponentes = [float(x.strip()) for x in datos_exp.split(",")]
                 print(f"Resultado: {potencia.potencia_vectorizada(bases, exponentes)}")
+
+            elif opcion == "19":
+                from operaciones import multiplicacion
+                datos = input("Ingrese los números separados por coma (ej. 2,3,4): ")
+                valores = [float(x.strip()) for x in datos.split(",")]
+                print(f"Resultado: {multiplicacion.multiplicar_lista(valores)}")
 
             else:
                 print("Opción no válida")

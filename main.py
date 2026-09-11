@@ -183,12 +183,17 @@ def main():
                 datos = input("Ingrese los números separados por coma (ej. 2,3,4): ")
                 valores = [float(x.strip()) for x in datos.split(",")]
                 print(f"Resultado: {multiplicacion.multiplicar_lista(valores)}")
-
+                
             elif opcion == "20":
                 from operaciones import porcentaje
-                total = float(input("Ingrese la cantidad base (total): "))
-                pct = float(input("Ingrese el porcentaje a calcular (%): "))
-                print(f"Resultado: {porcentaje.porcentaje(total, pct)}")
+                try:
+                    total = float(input("Ingrese la cantidad base (total): "))
+                    pct = float(input("Ingrese el porcentaje a calcular (%): "))
+                    print(f"Resultado: {porcentaje.porcentaje(total, pct)}")
+                except ValueError:
+                    print("Error: Debe ingresar números válidos, no texto.")
+                except TypeError as e:
+                    print(f"Error: {e}")    
                 
             elif opcion == "21":  
                 from operaciones import suma_cuadrados

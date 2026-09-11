@@ -8,6 +8,7 @@ def mostrar_menu():
     print("4. Módulo")
     print("5. División")
     print("9. Factorial")
+    print("10. Suma de Cuadrados")
     print("0. Salir")
     print("===============================")
 
@@ -56,7 +57,12 @@ def main():
                 n = float(input("Ingrese el número: "))
                 print(f"Resultado: {factorial.calcular_factorial(n)}")
 
-            
+            elif opcion == "10":  
+                from operaciones import suma_cuadrados
+                a = float(input("Ingrese el primer número: "))
+                b = float(input("Ingrese el segundo número: "))
+                print(f"Resultado: {suma_cuadrados.suma_cuadrados(a, b)}")
+
             else:
                 print("Opción no válida")
         

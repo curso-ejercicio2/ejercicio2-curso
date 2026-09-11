@@ -2,7 +2,8 @@
 #Responsable : Darlin Almanza (eq02)
 # Responsable: Jhosias Daza Albornoz
 # Responsable: Juan Carlos Anagua Kahuana
-# Responsable: Joel Mauricio Mamani Mamani (eq06)
+
+from .validaciones import es_numero, lista_no_vacia
 
 def multiplicar(a, b):
     """
@@ -18,8 +19,8 @@ def multiplicar(a, b):
     Raises:
         TypeError: Si alguno de los argumentos no es numérico
     """
-    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
-        raise TypeError("Ambos argumentos deben ser numéricos")
+    es_numero(a, "El primer número")
+    es_numero(b, "El segundo número")
     return a * b
 
 
@@ -37,18 +38,23 @@ def multiplicar_lista(valores):
         ValueError: Si la lista está vacía
         TypeError: Si algún elemento no es numérico
     """
-    if not valores:
-        raise ValueError("La lista no puede estar vacía")
+    lista_no_vacia(valores)
+    for valor in valores:
+        es_numero(valor, f"El elemento '{valor}'")
     resultado = 1
     for valor in valores:
-        if not isinstance(valor, (int, float)):
-            raise TypeError(f"El valor '{valor}' no es numérico")
         resultado *= valor
     return resultado
 
 
 # Responsable: Darlin Almanza (eq02)
-def multiplicar_matriz (matriz_a, matriz_b):
+def multiplicar_matriz(matriz_a, matriz_b):
+    if not matriz_a or not matriz_b:
+        raise ValueError("Las matrices no pueden estar vacías")
+    if len(matriz_a[0]) != len(matriz_b):
+        raise ValueError(
+            "El número de columnas de A debe ser igual al número de filas de B"
+        )
     filas_a = len(matriz_a)
     columnas_a = len(matriz_a[0])
     columnas_b = len(matriz_b[0])

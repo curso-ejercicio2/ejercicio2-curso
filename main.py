@@ -1,5 +1,8 @@
 # main.py - Menú central de operaciones
 
+
+
+
 def mostrar_menu():
     print("\n=== CALCULADORA - EJERCICIO 2 ===")
     print("1. Suma")
@@ -69,7 +72,17 @@ def main():
                 r = int(input("Ingrese r: "))
                 print(f"Resultado: {permutacion.calcular_permutaciones(n, r)}")
 
-            
+            elif opcion == "6":
+                from operaciones import potencia
+                a = float(input("Ingrese la base: "))
+                b = float(input("Ingrese el exponente: "))
+                print(f"Resultado: {potencia.calcular_potencia(a, b)}")
+                
+            elif opcion == "8":
+                num_base = float(input("Ingrese el número (base): "))
+                num_indice = float(input("Ingrese el índice de la raíz: "))
+                resultado =   raiz.calcular(num_base, num_indice)
+                print(f"Resultado: {resultado}")           
             else:
                 print("Opción no válida")
         

@@ -39,6 +39,7 @@ def mostrar_menu():
     print("35. Suma de números pares de una lista")
     print("36. Promedio")
     print("37. Resta de fracciones")
+    print("38. División mediante búsqueda binaria")
     print("0. Salir")
     print("===============================")
 
@@ -552,9 +553,23 @@ def main():
                 print(
                     f"Resultado decimal: {float(resultado)}"
                 )
+            elif opcion == "38":
+                # Responsable: Natalie Saravia Camacho (eq07)
+                from operaciones import division
+
+                dividendo = float(input("Ingrese el dividendo: "))
+                divisor = float(input("Ingrese el divisor: "))
+
+                cociente, residuo = division.divisionBusquedaBinaria(
+                    dividendo, divisor
+                )
+
+                print(f"Cociente: {cociente}")
+                print(f"Residuo: {residuo}")
 
             else:
                 print("Opción no válida")
+                
 
         except ImportError as e:
             print(

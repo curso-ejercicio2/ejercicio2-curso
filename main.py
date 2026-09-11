@@ -27,17 +27,14 @@ def mostrar_menu():
     print("===============================")
 
 
-
 def main():
     while True:
         mostrar_menu()
         opcion = input("Seleccione una operación: ")
 
-
         if opcion == "0":
             print("¡Hasta luego!")
             break
-
 
         try:
             if opcion == "1":
@@ -46,19 +43,10 @@ def main():
                 b = float(input("Ingrese el segundo número: "))
                 print(f"Resultado: {suma.sumar(a, b)}")
 
-
             elif opcion == "2":
                 from operaciones import resta
                 a = float(input("Ingrese el primer número: "))
                 b = float(input("Ingrese el segundo número: "))
-                usar_varios = input("¿Restar varios valores además de estos dos? (s/n): ").strip().lower()
-                if usar_varios == "s":
-                    extras = input("Ingrese valores adicionales separados por coma (o dejar vacío): ").strip()
-                    valores_extra = [float(v) for v in extras.split(",") if v.strip()] if extras else []
-                    print(f"Resultado: {resta.restar_varios(a - b, *valores_extra)}")
-                else:
-                    print(f"Resultado: {resta.restar(a, b)}")
-
                 usar_varios = input("¿Restar varios valores además de estos dos? (s/n): ").strip().lower()
                 if usar_varios == "s":
                     extras = input("Ingrese valores adicionales separados por coma (o dejar vacío): ").strip()
@@ -73,23 +61,16 @@ def main():
                 b = float(input("Ingrese el segundo número: "))
                 print(f"Resultado: {multiplicacion.multiplicar(a, b)}")
 
-
             elif opcion == "4":
                 from operaciones import modulo
                 a = float(input("Ingrese el dividendo: "))
                 b = float(input("Ingrese el divisor: "))
                 print(f"Resultado: {modulo.calcular_modulo(a, b)}")
 
-
             elif opcion == "5":
                 from operaciones import division
                 a = float(input("Ingrese el dividendo: "))
                 b = float(input("Ingrese el divisor: "))
-                validar = input("¿Validar que ambos sean positivos? (s/n): ").strip().lower()
-                if validar == "s":
-                    print(f"Resultado: {division.dividir_positivos(a, b)}")
-                else:
-                    print(f"Resultado: {division.dividir(a, b)}")
                 validar = input("¿Validar que ambos sean positivos? (s/n): ").strip().lower()
                 if validar == "s":
                     print(f"Resultado: {division.dividir_positivos(a, b)}")
@@ -118,7 +99,6 @@ def main():
                 from operaciones import factorial
                 n = float(input("Ingrese el número: "))
                 print(f"Resultado: {factorial.calcular_factorial(n)}")
-
 
             elif opcion == "10":
                 from operaciones import permutacion
@@ -187,7 +167,7 @@ def main():
                 a = float(input("Ingrese el dividendo (positivo): "))
                 b = float(input("Ingrese el divisor (positivo): "))
                 print(f"Resultado: {division.dividir_positivos(a, b)}")
-            
+
             elif opcion == "18":
                 from operaciones import potencia
                 datos_bases = input("Ingrese las bases separadas por coma: ")
@@ -208,17 +188,12 @@ def main():
                 pct = float(input("Ingrese el porcentaje a calcular (%): "))
                 print(f"Resultado: {porcentaje.porcentaje(total, pct)}")
 
-                datos_bases = input("Ingrese las bases separadas por coma: ")
-                bases = [float(x.strip()) for x in datos_bases.split(",")]
-                datos_exp = input("Ingrese los exponentes separados por coma: ")
-                exponentes = [float(x.strip()) for x in datos_exp.split(",")]
-                print(f"Resultado: {potencia.potencia_vectorizada(bases, exponentes)}")
-
             elif opcion == "21": 
                 from operaciones import fibonacci 
                 n = int(input("Ingrese la posición de Fibonacci: "))
                 print(f"Resultado: {fibonacci.fibonacci(n)}")
             
+
             else:
                 print("Opción no válida")
 

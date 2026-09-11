@@ -51,7 +51,7 @@ def main():
                 a = float(input("Ingrese el dividendo: "))
                 b = float(input("Ingrese el divisor: "))
                 print(f"Resultado: {division.dividir(a, b)}")
-             elif opcion == "6":
+            elif opcion == "6":
                 from operaciones.trigonometria import FuncionesTrigonometricas
 
                 print("1. Seno")

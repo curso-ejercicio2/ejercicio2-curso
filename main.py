@@ -29,6 +29,7 @@ def mostrar_menu():
     print("25. Numero par o impar")
     print("26. Doble de un número")
     print("27. Minimo Comun Multiplo (MCM)")
+    print("28. Multiplicacion de matriz por un escalar")
 
     print("0. Salir")
     print("===============================")
@@ -241,6 +242,19 @@ def main():
                 a = int(input("Ingrese el primer número: "))
                 b = int(input("Ingrese el segundo número: "))
                 print(f"Resultado: {mcm.mcm(a, b)}")
+
+            elif opcion == "28":
+                from operaciones import multiplicacion
+                print("Ingrese la matriz fila por fila (números separados por coma).")
+                print("Escriba una línea vacía para terminar.")
+                matriz = []
+                while True:
+                    fila = input("Fila: ")
+                    if fila == "":
+                        break
+                    matriz.append([float(x.strip()) for x in fila.split(",")])
+                escalar = float(input("Ingrese el escalar: "))
+                print(f"Resultado: {multiplicacion.multiplicar_matriz_por_un_escalar(matriz, escalar)}")
             
             else:
                 print("Opción no válida")

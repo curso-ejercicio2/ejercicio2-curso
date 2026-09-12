@@ -46,9 +46,9 @@ def mostrar_menu():
     print("42. División mediante búsqueda binaria")
     print("43. Determinante de una matriz")
     print("44. Suma de vectores")
+    print("45. Division de decimales")
     print("0. Salir")
     print("===============================")
-
 
 def main():
     while True:
@@ -643,10 +643,18 @@ def main():
 
                 resultado = suma_vectores.sumar_vectores(v1, v2)
                 print(f"Resultado de la suma: {resultado}")
+                
+            elif opcion == "45":
+                # Responsable: Heidy Jhael Flores Tiñini (eq05)
+                from operaciones import division_decimales
+                a = float(input("Ingrese el dividendo: "))
+                b = float(input("Ingrese el divisor: "))
+                res = division_decimales.dividir_decimales(a, b)
+                print(f"Resultado: {a} / {b} = {res:.4f}")
 
             else:
                 print("opcion no valida")
- 
+
         except ImportError as e:
             print(
                 f"Error: No se pudo importar el módulo. {e}"

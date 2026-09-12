@@ -44,6 +44,8 @@ def mostrar_menu():
     print("40. Promedio exacto")
     print("41. Verificar si un numero es primo")
     print("42. Determinante de una matriz")
+    print("42. División mediante búsqueda binaria")
+    print("43. Determinante de una matriz")
     print("0. Salir")
     print("===============================")
 
@@ -559,8 +561,8 @@ def main():
                 print(
                     f"Resultado decimal: {float(resultado)}"
                 )
-
-    
+            
+            elif opcion == "38":
                 # Responsable: Vargas Mercado Miguel Angel (eq07)
                 from operaciones import resta
                 datos = input("Ingrese los números separados por coma: ")
@@ -576,6 +578,7 @@ def main():
                         print(f"Resultado: {n} es primo")
                 else:
                         print(f"Resultado: {n} no es primo")
+
          
 
             elif opcion == "40":
@@ -596,7 +599,22 @@ def main():
                     print(f"Resultado: {n} es primo")
                 else:
                     print(f"Resultado: {n} no es primo")
+                    
             elif opcion == "42":
+                # Responsable: Natalie Saravia Camacho (eq07)
+                from operaciones import division
+
+                dividendo = float(input("Ingrese el dividendo: "))
+                divisor = float(input("Ingrese el divisor: "))
+
+                cociente, residuo = division.divisionBusquedaBinaria(
+                    dividendo, divisor
+                )
+
+                print(f"Cociente: {cociente}")
+                print(f"Residuo: {residuo}") 
+                
+            elif opcion == "43":
                 # Responsable: Vicente Silvestre Velásquez (eq05)
                 from operaciones import determinante_matriz
 
@@ -610,12 +628,12 @@ def main():
 
                 resultado = determinante_matriz.determinante_matriz(matriz)
 
-                print(f"\nDeterminante de la matriz = {resultado:g}")
+                print(f"\nDeterminante de la matriz = {resultado:g}")    
+                  
 
             else:
                 print("opcion no valida")
  
-
         except ImportError as e:
             print(
                 f"Error: No se pudo importar el módulo. {e}"

@@ -43,7 +43,10 @@ def mostrar_menu():
     print("39. Número primo")
     print("40. Promedio exacto")
     print("41. Verificar si un numero es primo")
+    print("42. División mediante búsqueda binaria")
     print("0. Salir")
+    print("0. Salir")
+
     print("===============================")
 
 
@@ -558,8 +561,15 @@ def main():
                 print(
                     f"Resultado decimal: {float(resultado)}"
                 )
+<<<<<<< HEAD
+            
+            elif opcion == "38":
+
+
+=======
 
     
+>>>>>>> origin/develop
                 # Responsable: Vargas Mercado Miguel Angel (eq07)
                 from operaciones import resta
                 datos = input("Ingrese los números separados por coma: ")
@@ -575,6 +585,7 @@ def main():
                         print(f"Resultado: {n} es primo")
                 else:
                         print(f"Resultado: {n} no es primo")
+
          
 
             elif opcion == "40":
@@ -595,11 +606,28 @@ def main():
                     print(f"Resultado: {n} es primo")
                 else:
                     print(f"Resultado: {n} no es primo")
+                    
+            elif opcion == "42":
+                # Responsable: Natalie Saravia Camacho (eq07)
+                from operaciones import division
+
+                dividendo = float(input("Ingrese el dividendo: "))
+                divisor = float(input("Ingrese el divisor: "))
+
+                cociente, residuo = division.divisionBusquedaBinaria(
+                    dividendo, divisor
+                )
+
+                print(f"Cociente: {cociente}")
+                print(f"Residuo: {residuo}")            
+            else:
+                print("Opción no válida")        
 
             else:
                 print("opcion no valida")
  
 
+>>>>>>> origin/develop
         except ImportError as e:
             print(
                 f"Error: No se pudo importar el módulo. {e}"

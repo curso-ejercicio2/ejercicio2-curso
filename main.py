@@ -762,7 +762,7 @@ def main():
                 
                 
                 
-             elif opcion == "61":
+             elif opcion == "57":
                 from operaciones.trigonometria import FuncionesTrigonometricas
 
                 print("1. Seno")

@@ -49,8 +49,16 @@ def mostrar_menu():
     print("45. Division de decimales")
     print("46. Desviación estándar")
     print("47. Ecuación de segundo grado")
-    print("0. Salir")
-    print("===============================")
+    print("48. Número perfecto ")
+    print("49. Multiplicar fracciones ")
+    print("50. Tangente ")
+    print("51. Moda ")
+    print("52. Raíz cuadrada ")
+    print("53. Sumar fracciones ")
+    print("54. Verificar número primo")
+    print("55. Rango de una lista")
+    print("0. Salir")
+    print("===============================")
 
 def main():
     while True:
@@ -630,9 +638,8 @@ def main():
 
                 resultado = determinante_matriz.determinante_matriz(matriz)
 
-                print(f"\nDeterminante de la matriz = {resultado:g}")    
-                  
-
+                print(f"\nDeterminante de la matriz = {resultado:g}")  
+                
             elif opcion == "44":
                 # Responsable: Dayana Ibarra Zarate (eq05)
                 from operaciones import sumaDeVectores
@@ -738,6 +745,21 @@ def main():
                     print(f"Resultado: {n} es un número primo")
                 else:
                     print(f"Resultado: {n} no es un número primo")
+
+
+
+            
+
+             elif opcion == "55":
+                # Responsable: Mirko Coca Flores (eq01)
+                from operaciones.rango_lista import rango_lista
+
+                datos = input("Ingrese los números separados por coma: ")
+                valores = [
+                    float(x.strip())for x in datos.split(",")if x.strip()]
+
+                print(f"Resultado: {rango_lista(valores)}")    
+                
             else:
                 print("Opción no válida")
 

@@ -3,18 +3,19 @@
 
 from .factorial import calcular_factorial
 from .permutacion import calcular_permutaciones
+from .validaciones import no_negativo, es_entero
 
 def calcular_combinaciones(n, r):
     """
     Calcula el número de combinaciones de n elementos tomados de r en r (nCr).
     Fórmula: n! / (r! * (n - r)!)
     """
-    if r < 0 or n < 0:
-        raise ValueError("n y r deben ser no negativos")
+    no_negativo(n, "n")
+    no_negativo(r, "r")
+    es_entero(n, "n")
+    es_entero(r, "r")
     if r > n:
         raise ValueError("r no puede ser mayor que n")
-    if n != int(n) or r != int(r):
-        raise ValueError("n y r deben ser enteros")
 
     n = int(n)
     r = int(r)

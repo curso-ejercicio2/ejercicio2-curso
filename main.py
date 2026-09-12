@@ -39,8 +39,14 @@ def mostrar_menu():
     print("35. Suma de números pares de una lista")
     print("36. Promedio")
     print("37. Resta de fracciones")
-    print("38. Rango de una lista")
+    print("38. Resta de una lista")
+    print("39. Número primo")
+    print("40. Promedio exacto")
+    print("41. Verificar si un numero es primo")
+    print("42. División mediante búsqueda binaria")
     print("0. Salir")
+    print("0. Salir")
+
     print("===============================")
 
 
@@ -513,12 +519,14 @@ def main():
                 lista = [float(x.strip()) for x in datos.split(",")]
                 print(f"Resultado (Suma de pares): {suma.suma_pares(lista)}")
 
+
             elif opcion == "36":
                 # Responsable: Ticona Chura Stefani Mishel (eq04)
                 from operaciones import promedio
                 datos = input("Ingrese los números separados por coma: ")
                 lista = [float(x.strip()) for x in datos.split(",")]
                 print(f"Resultado: {promedio.promedio(lista)}")
+ 
 
             elif opcion == "37":
                 # Responsable: Oliver Cristian Quispe Rocha (eq04)
@@ -555,17 +563,62 @@ def main():
                 )
 
             elif opcion == "38":
-                # Responsable: Mirko Coca Flores (eq01)
-                from operaciones.rango_lista import rango_lista
-
+                # Responsable: Vargas Mercado Miguel Angel (eq07)
+                from operaciones import resta
                 datos = input("Ingrese los números separados por coma: ")
-                valores = [float(x.strip()) for x in datos.split(",") if x.strip()]
+                lista = [float(x.strip()) for x in datos.split(",")]
+                print(f"Resultado: {resta.restar_lista(lista)}")
 
-                print(f"Resultado: {rango_lista(valores)}")
+            elif opcion == "39":
+                from operaciones import numero_primo
+                
+                n = int(input("Ingrese un número entero: "))
+                
+                if numero_primo.es_primo(n):
+                        print(f"Resultado: {n} es primo")
+                else:
+                        print(f"Resultado: {n} no es primo")
+
+         
+
+            elif opcion == "40":
+                # Responsable: Nicole Flores Escalera (eq07)
+                from operaciones import promedio
+                try:
+                    datos = input("Ingrese los números separados por coma: ")
+                    lista = [float(x.strip()) for x in datos.split(",")]
+                    print(f"Resultado: {promedio.promedio_exacto(lista)}")
+                except ValueError as e:
+                    print(f"Error: {e}")
+
+            elif opcion == "41":
+                # Responsable: Huanca Clemente Nicole (eq06)
+                from operaciones import primo
+                n = int(input("Ingrese el número: "))
+                if primo.es_primo(n):
+                    print(f"Resultado: {n} es primo")
+                else:
+                    print(f"Resultado: {n} no es primo")
+                    
+            elif opcion == "42":
+                # Responsable: Natalie Saravia Camacho (eq07)
+                from operaciones import division
+
+                dividendo = float(input("Ingrese el dividendo: "))
+                divisor = float(input("Ingrese el divisor: "))
+
+                cociente, residuo = division.divisionBusquedaBinaria(
+                    dividendo, divisor
+                )
+
+                print(f"Cociente: {cociente}")
+                print(f"Residuo: {residuo}")            
+            else:
+                print("Opción no válida")        
 
             else:
-                print("Opción no válida")
-
+                print("opcion no valida")
+ 
         except ImportError as e:
             print(
                 f"Error: No se pudo importar el módulo. {e}"

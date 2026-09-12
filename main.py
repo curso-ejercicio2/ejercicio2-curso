@@ -46,6 +46,7 @@ def mostrar_menu():
     print("42. Determinante de una matriz")
     print("42. División mediante búsqueda binaria")
     print("43. Determinante de una matriz")
+    print("44. Rango de una lista")
     print("0. Salir")
     print("===============================")
 
@@ -628,8 +629,17 @@ def main():
 
                 resultado = determinante_matriz.determinante_matriz(matriz)
 
-                print(f"\nDeterminante de la matriz = {resultado:g}")    
-                  
+                print(f"\nDeterminante de la matriz = {resultado:g}")  
+
+            elif opcion == "44":
+                # Responsable: Mirko Coca Flores (eq01)
+                from operaciones.rango_lista import rango_lista
+
+                datos = input("Ingrese los números separados por coma: ")
+                valores = [
+                    float(x.strip())for x in datos.split(",")if x.strip()]
+
+                print(f"Resultado: {rango_lista(valores)}")
 
             else:
                 print("opcion no valida")

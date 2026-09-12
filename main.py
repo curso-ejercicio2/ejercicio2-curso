@@ -751,7 +751,7 @@ def main():
 
 
        
-             elif opcion == "55":
+            elif opcion == "55":
                 # Responsable: Mirko Coca Flores (eq01)
                 from operaciones.rango_lista import rango_lista
 

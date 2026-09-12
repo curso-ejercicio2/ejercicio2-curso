@@ -43,6 +43,7 @@ def mostrar_menu():
     print("39. Número primo")
     print("40. Promedio exacto")
     print("41. Verificar si un numero es primo")
+    print("42. Division de decimales")
     print("0. Salir")
     print("===============================")
 
@@ -596,9 +597,16 @@ def main():
                 else:
                     print(f"Resultado: {n} no es primo")
 
+            elif opcion == "42":
+                # Responsable: Heidy Jhael Flores Tiñini (eq05)
+                from operaciones import division_decimales
+                a = float(input("Ingrese el dividendo: "))
+                b = float(input("Ingrese el divisor: "))
+                res = division_decimales.dividir_decimales(a, b)
+                print(f"Resultado: {a} / {b} = {res:.4f}")
+
             else:
                 print("opcion no valida")
- 
 
         except ImportError as e:
             print(

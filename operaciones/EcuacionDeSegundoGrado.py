@@ -1,6 +1,6 @@
 import math
  #Ecuacion de segundo grado 
-#responsable: Deyna Yara Choque Limachi 
+#responsable: Deyna Yara Choque Limachi (eq05)
  
 
 def resolver(a, b, c):

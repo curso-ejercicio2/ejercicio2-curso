@@ -47,6 +47,7 @@ def mostrar_menu():
     print("43. Determinante de una matriz")
     print("44. Suma de vectores")
     print("45. Division de decimales")
+    print("46. Desviación estándar")
     print("0. Salir")
     print("===============================")
 
@@ -652,8 +653,16 @@ def main():
                 res = division_decimales.dividir_decimales(a, b)
                 print(f"Resultado: {a} / {b} = {res:.4f}")
 
+          
+                
+            elif opcion == "46":
+                from operaciones import desviacion_estandar
+                datos = input("Ingrese los números separados por coma: ")
+                lista = [float(x.strip()) for x in datos.split(",")]
+                print(f"Resultado: {desviacion_estandar.calcular_desviacion_estandar(lista)}")
+
             else:
-                print("opcion no valida")
+                print("Opción no válida")
 
         except ImportError as e:
             print(

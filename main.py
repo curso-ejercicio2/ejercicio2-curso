@@ -43,6 +43,7 @@ def mostrar_menu():
     print("39. Número primo")
     print("40. Promedio exacto")
     print("41. Verificar si un numero es primo")
+    print("44. Suma de vectores")
     print("0. Salir")
     print("===============================")
 
@@ -595,6 +596,19 @@ def main():
                     print(f"Resultado: {n} es primo")
                 else:
                     print(f"Resultado: {n} no es primo")
+
+            elif opcion == "44":
+                # Responsable: Dayana Ibarra Zarate (eq05)
+                from operaciones import sumaDeVectores
+
+                datos_a = input("Ingrese el primer vector (números separados por coma): ")
+                v1 = [float(x.strip()) for x in datos_a.split(",")]
+
+                datos_b = input("Ingrese el segundo vector (números separados por coma): ")
+                v2 = [float(x.strip()) for x in datos_b.split(",")]
+
+                resultado = suma_vectores.sumar_vectores(v1, v2)
+                print(f"Resultado de la suma: {resultado}")
 
             else:
                 print("opcion no valida")

@@ -43,13 +43,12 @@ def mostrar_menu():
     print("39. Número primo")
     print("40. Promedio exacto")
     print("41. Verificar si un numero es primo")
-    print("42. Determinante de una matriz")
     print("42. División mediante búsqueda binaria")
     print("43. Determinante de una matriz")
     print("44. Division de decimales")
+    print("45. Suma de vectores")
     print("0. Salir")
     print("===============================")
-
 
 def main():
     while True:
@@ -633,6 +632,18 @@ def main():
                   
 
             elif opcion == "44":
+                # Responsable: Dayana Ibarra Zarate (eq05)
+                from operaciones import sumaDeVectores
+
+                datos_a = input("Ingrese el primer vector (números separados por coma): ")
+                v1 = [float(x.strip()) for x in datos_a.split(",")]
+
+                datos_b = input("Ingrese el segundo vector (números separados por coma): ")
+                v2 = [float(x.strip()) for x in datos_b.split(",")]
+
+                resultado = suma_vectores.sumar_vectores(v1, v2)
+                print(f"Resultado de la suma: {resultado}")
+            elif opcion == "45":
                 # Responsable: Heidy Jhael Flores Tiñini (eq05)
                 from operaciones import division_decimales
                 a = float(input("Ingrese el dividendo: "))

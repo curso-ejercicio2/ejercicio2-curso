@@ -671,8 +671,73 @@ def main():
                 print(
                     f"Resultado: "
                     f"{EcuacionDeSegundoGrado.resolver(a, b, c)}"      
-                  
+                )
+            elif opcion == "48":
+                # Responsable: Ordoñez Luna Jhoan Jhostyn (eq08)
+                from operaciones import es_perfecto
+                n = int(input("Ingrese un número entero: "))
+                if es_perfecto.es_perfecto(n):
+                    print(f"Resultado: {n} es un número perfecto")
+                else:
+                    print(f"Resultado: {n} no es un número perfecto")
 
+            elif opcion == "49":
+                # Responsable: Rogelio Cortez (eq08)
+                from operaciones import fracciones
+                print("\n=== MULTIPLICACIÓN DE FRACCIONES ===")
+                num1 = int(input("Ingrese el numerador de la primera fracción: "))
+                den1 = int(input("Ingrese el denominador de la primera fracción: "))
+                num2 = int(input("Ingrese el numerador de la segunda fracción: "))
+                den2 = int(input("Ingrese el denominador de la segunda fracción: "))
+                
+                resultado = fracciones.multiplicar_fracciones(num1, den1, num2, den2)
+                print(f"\nResultado: {num1}/{den1} * {num2}/{den2} = {resultado}")
+
+            elif opcion == "50":
+                # Responsable: Wendi
+                import math
+                angulo = float(input("Ingrese el ángulo en grados: "))
+                resultado = math.tan(math.radians(angulo))
+                print(f"La tangente de {angulo}° es: {resultado:.4f}")
+
+            elif opcion == "51":
+                # Responsable: Santiago Lora (eq08)
+                from operaciones import moda
+                datos = input("Ingrese los números separados por coma: ")
+                lista = [float(x.strip()) for x in datos.split(",")]
+                
+                resultado, tipo = moda.calcular_moda(lista)
+                if resultado is None:
+                    print(f"Resultado: {tipo}") # Imprime el mensaje de error o "Amodal"
+                else:
+                    print(f"Resultado: Moda = {resultado} ({tipo})")
+
+            elif opcion == "52":
+                # Responsable: Daniel Flores (eq08)
+                from operaciones import raiz
+                num = float(input("Ingrese el número para calcular su raíz cuadrada: "))
+                print(f"Resultado: {raiz.raiz_cuadrada(num)}")
+
+            elif opcion == "53":
+                # Responsable: Alba Arrosquipa (eq08)
+                from operaciones import fracciones
+                print("\n=== SUMA DE FRACCIONES ===")
+                num1 = int(input("Ingrese el numerador de la primera fracción: "))
+                den1 = int(input("Ingrese el denominador de la primera fracción: "))
+                num2 = int(input("Ingrese el numerador de la segunda fracción: "))
+                den2 = int(input("Ingrese el denominador de la segunda fracción: "))
+                
+                resultado = fracciones.sumar_fracciones(num1, den1, num2, den2)
+                print(f"\nResultado: {num1}/{den1} + {num2}/{den2} = {resultado}")
+
+            elif opcion == "54":
+                # Responsable: Jhair
+                from operaciones import es_primo
+                n = int(input("Ingrese un número entero: "))
+                if es_primo.es_primo(n):
+                    print(f"Resultado: {n} es un número primo")
+                else:
+                    print(f"Resultado: {n} no es un número primo")
             else:
                 print("Opción no válida")
 

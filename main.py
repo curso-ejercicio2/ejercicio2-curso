@@ -47,6 +47,7 @@ def mostrar_menu():
     print("43. Determinante de una matriz")
     print("44. Suma de vectores")
     print("45. Division de decimales")
+    print("46. Variacion porcentual")
     print("0. Salir")
     print("===============================")
 
@@ -651,6 +652,22 @@ def main():
                 b = float(input("Ingrese el divisor: "))
                 res = division_decimales.dividir_decimales(a, b)
                 print(f"Resultado: {a} / {b} = {res:.4f}")
+
+              
+            elif opcion == "46":
+                # Responsable: Franz Orellana (eq04)
+                from operaciones import porcentaje
+
+                valor_inicial = float(input("Ingrese el valor inicial: "))
+                valor_final = float(input("Ingrese el valor final: "))
+
+                resultado = porcentaje.variacion_porcentual(
+                    valor_inicial, valor_final
+                )
+
+                print(f"Resultado: {resultado:.2f}%")
+
+        
 
             else:
                 print("opcion no valida")

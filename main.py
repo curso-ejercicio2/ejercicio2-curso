@@ -41,6 +41,7 @@ def mostrar_menu():
     print("37. Resta de fracciones")
     print("38. Resta de una lista")
     print("39. Número primo")
+    print("40. Determinante de una matriz")
 
     print("0. Salir")
     print("===============================")
@@ -574,10 +575,26 @@ def main():
                 if numero_primo.es_primo(n):
                         print(f"Resultado: {n} es primo")
                 else:
-                        print(f"Resultado: {n} no es primo")
+                        print(f"Resultado: {n} no es primo")  
+                                
+            elif opcion == "40":
+                # Responsable: Vicente Silvestre Velásquez (eq05)
+                from operaciones import determinante_matriz
+
+                matriz = determinante_matriz.leer_matriz()
+
+                print("\nMatriz ingresada:")
+                for fila in matriz:
+                    for elemento in fila:
+                        print(f"{elemento:8g}", end=" ")
+                    print()
+
+                resultado = determinante_matriz.determinante_matriz(matriz)
+
+                print(f"\nDeterminante de la matriz = {resultado:g}")
             else:
                 print("Opción no válida")
-
+            
         except ImportError as e:
             print(
                 f"Error: No se pudo importar el módulo. {e}"

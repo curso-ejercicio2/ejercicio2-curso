@@ -44,6 +44,7 @@ def mostrar_menu():
     print("40. Promedio exacto")
     print("41. Verificar si un numero es primo")
     print("42. División mediante búsqueda binaria")
+    print("130. Ecuación de segundo grado")
     print("0. Salir")
     print("0. Salir")
 
@@ -619,7 +620,20 @@ def main():
                 )
 
                 print(f"Cociente: {cociente}")
-                print(f"Residuo: {residuo}")            
+                print(f"Residuo: {residuo}") 
+    
+                elif opcion == "130":
+                 #responsable: Deyna Yara Choque Limachi 
+                from operaciones import EcuacionDeSegundoGrado
+
+                a = float(input("Ingrese el coeficiente a: "))
+                b = float(input("Ingrese el coeficiente b: "))
+                c = float(input("Ingrese el coeficiente c: "))
+
+                print(
+                    f"Resultado: "
+                    f"{EcuacionDeSegundoGrado.resolver(a, b, c)}"
+                )             
             else:
                 print("Opción no válida")        
 

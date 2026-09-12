@@ -58,7 +58,8 @@ def mostrar_menu():
     print("54. Verificar número primo")
     print("55. Rango de una lista")
     print("56. Binario a decimal")
-    print("57. Teorema de Pitágoras")
+    print("57 Funciones trigonométricas")
+    print("58. Teorema de Pitágoras")
     print("0. Salir")
     print("===============================")
 
@@ -117,16 +118,8 @@ def main():
                 from operaciones import division
                 a = float(input("Ingrese el dividendo: "))
                 b = float(input("Ingrese el divisor: "))
-
-                validar = input(
-                    "¿Validar que ambos sean positivos? (s/n): "
-                ).strip().lower()
-
-                if validar == "s":
-                    print(f"Resultado: {division.dividir_positivos(a, b)}")
-                else:
-                    print(f"Resultado: {division.dividir(a, b)}")
-
+                print(f"Resultado: {division.dividir(a, b)}")
+         
             elif opcion == "6":
                 from operaciones import valor_absoluto
                 a = float(input("Ingrese el número: "))
@@ -768,8 +761,42 @@ def main():
 
                 print(f"Resultado: {binario_decimal.binario_a_decimal(binario)}")
                 
+                
+                
+             elif opcion == "57":
+                from operaciones.trigonometria import FuncionesTrigonometricas
+
+                print("1. Seno")
+                print("2. Coseno")
+                print("3. Tangente")
+                funcion = input("Seleccione una función: ")
+                angulo = float(input("Ingrese el ángulo en grados: "))
+                funciones = FuncionesTrigonometricas()
+
+                if funcion == "1":
+                    resultado = funciones.seno(angulo)
+                elif funcion == "2":
+                    resultado = funciones.coseno(angulo)
+                elif funcion == "3":
+                    resultado = funciones.tangente(angulo)
+                else:
+                    print("Función no válida")
+                    continue
+
+                print(f"Resultado: {resultado}")
+            
+
+                validar = input(
+                    "¿Validar que ambos sean positivos? (s/n): "
+                ).strip().lower()
+
+                if validar == "s":
+                    print(f"Resultado: {division.dividir_positivos(a, b)}")
+                else:
+                    print(f"Resultado: {division.dividir(a, b)}")
+
              # Responsable: Roman Zeballos Dylan Roberto (eq05)
-            elif opcion == "57":
+            elif opcion == "58":
                 from operaciones import pitagoras
 
                 print("\n=== TEOREMA DE PITÁGORAS ===")
@@ -792,6 +819,8 @@ def main():
             else:
                print("Opción no válida")
 
+                
+                
         except ImportError as e:
             print(
                 f"Error: No se pudo importar el módulo. {e}"

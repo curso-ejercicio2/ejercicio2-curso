@@ -671,9 +671,9 @@ def main():
                 print(
                     f"Resultado: "
                     f"{EcuacionDeSegundoGrado.resolver(a, b, c)}"      
-                  
+                )  
 
-             elif opcion == "48":
+            elif opcion == "48":
                 # Responsable: Mirko Coca Flores (eq01)
                 from operaciones.rango_lista import rango_lista
 

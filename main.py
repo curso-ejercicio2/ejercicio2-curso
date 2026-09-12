@@ -671,7 +671,7 @@ def main():
                 print(
                     f"Resultado: "
                     f"{EcuacionDeSegundoGrado.resolver(a, b, c)}"      
-                  
+                )
 
             else:
                 print("Opción no válida")

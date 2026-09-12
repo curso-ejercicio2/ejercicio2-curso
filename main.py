@@ -47,9 +47,20 @@ def mostrar_menu():
     print("43. Determinante de una matriz")
     print("44. Suma de vectores")
     print("45. Division de decimales")
-    print("46. Teorema de Pitágoras")
-    print("0. Salir")
-    print("===============================")
+    print("46. Desviación estándar")
+    print("47. Ecuación de segundo grado")
+    print("48. Número perfecto ")
+    print("49. Multiplicar fracciones ")
+    print("50. Tangente ")
+    print("51. Moda ")
+    print("52. Raíz cuadrada ")
+    print("53. Sumar fracciones ")
+    print("54. Verificar número primo")
+    print("55. Rango de una lista")
+    print("56. Binario a decimal")
+    print("57. Teorema de Pitágoras")
+    print("0. Salir")
+    print("===============================")
 
 def main():
     while True:
@@ -613,7 +624,7 @@ def main():
                 )
 
                 print(f"Cociente: {cociente}")
-                print(f"Residuo: {residuo}") 
+                print(f"Residuo: {residuo}")        
                 
             elif opcion == "43":
                 # Responsable: Vicente Silvestre Velásquez (eq05)
@@ -629,9 +640,8 @@ def main():
 
                 resultado = determinante_matriz.determinante_matriz(matriz)
 
-                print(f"\nDeterminante de la matriz = {resultado:g}")    
-                  
-
+                print(f"\nDeterminante de la matriz = {resultado:g}")  
+                
             elif opcion == "44":
                 # Responsable: Dayana Ibarra Zarate (eq05)
                 from operaciones import sumaDeVectores
@@ -642,7 +652,7 @@ def main():
                 datos_b = input("Ingrese el segundo vector (números separados por coma): ")
                 v2 = [float(x.strip()) for x in datos_b.split(",")]
 
-                resultado = suma_vectores.sumar_vectores(v1, v2)
+                resultado = sumaDeVectores.sumar_vectores(v1, v2)
                 print(f"Resultado de la suma: {resultado}")
                 
             elif opcion == "45":
@@ -652,7 +662,113 @@ def main():
                 b = float(input("Ingrese el divisor: "))
                 res = division_decimales.dividir_decimales(a, b)
                 print(f"Resultado: {a} / {b} = {res:.4f}")
-                 # Responsable: Roman Zeballos Dylan Roberto (eq05)
+                                          
+            elif opcion == "46":
+                from operaciones import desviacion_estandar
+                datos = input("Ingrese los números separados por coma: ")
+                lista = [float(x.strip()) for x in datos.split(",")]
+                print(f"Resultado: {desviacion_estandar.calcular_desviacion_estandar(lista)}")
+                  
+            elif opcion == "47":
+                 #responsable: Deyna Yara Choque Limachi 
+                from operaciones import EcuacionDeSegundoGrado
+
+                a = float(input("Ingrese el coeficiente a: "))
+                b = float(input("Ingrese el coeficiente b: "))
+                c = float(input("Ingrese el coeficiente c: "))
+
+                print(
+                    f"Resultado: "
+                    f"{EcuacionDeSegundoGrado.resolver(a, b, c)}"      
+                )
+            elif opcion == "48":
+                # Responsable: Ordoñez Luna Jhoan Jhostyn (eq08)
+                from operaciones import es_perfecto
+                n = int(input("Ingrese un número entero: "))
+                if es_perfecto.es_perfecto(n):
+                    print(f"Resultado: {n} es un número perfecto")
+                else:
+                    print(f"Resultado: {n} no es un número perfecto")
+
+            elif opcion == "49":
+                # Responsable: Rogelio Cortez (eq08)
+                from operaciones import fracciones
+                print("\n=== MULTIPLICACIÓN DE FRACCIONES ===")
+                num1 = int(input("Ingrese el numerador de la primera fracción: "))
+                den1 = int(input("Ingrese el denominador de la primera fracción: "))
+                num2 = int(input("Ingrese el numerador de la segunda fracción: "))
+                den2 = int(input("Ingrese el denominador de la segunda fracción: "))
+                
+                resultado = fracciones.multiplicar_fracciones(num1, den1, num2, den2)
+                print(f"\nResultado: {num1}/{den1} * {num2}/{den2} = {resultado}")
+
+            elif opcion == "50":
+                # Responsable: Wendi
+                import math
+                angulo = float(input("Ingrese el ángulo en grados: "))
+                resultado = math.tan(math.radians(angulo))
+                print(f"La tangente de {angulo}° es: {resultado:.4f}")
+
+            elif opcion == "51":
+                # Responsable: Santiago Lora (eq08)
+                from operaciones import moda
+                datos = input("Ingrese los números separados por coma: ")
+                lista = [float(x.strip()) for x in datos.split(",")]
+                
+                resultado, tipo = moda.calcular_moda(lista)
+                if resultado is None:
+                    print(f"Resultado: {tipo}") # Imprime el mensaje de error o "Amodal"
+                else:
+                    print(f"Resultado: Moda = {resultado} ({tipo})")
+
+            elif opcion == "52":
+                # Responsable: Daniel Flores (eq08)
+                from operaciones import raiz
+                num = float(input("Ingrese el número para calcular su raíz cuadrada: "))
+                print(f"Resultado: {raiz.raiz_cuadrada(num)}")
+
+            elif opcion == "53":
+                # Responsable: Alba Arrosquipa (eq08)
+                from operaciones import fracciones
+                print("\n=== SUMA DE FRACCIONES ===")
+                num1 = int(input("Ingrese el numerador de la primera fracción: "))
+                den1 = int(input("Ingrese el denominador de la primera fracción: "))
+                num2 = int(input("Ingrese el numerador de la segunda fracción: "))
+                den2 = int(input("Ingrese el denominador de la segunda fracción: "))
+                
+                resultado = fracciones.sumar_fracciones(num1, den1, num2, den2)
+                print(f"\nResultado: {num1}/{den1} + {num2}/{den2} = {resultado}")
+
+            elif opcion == "54":
+                # Responsable: Jhair
+                from operaciones import es_primo
+                n = int(input("Ingrese un número entero: "))
+                if es_primo.es_primo(n):
+                    print(f"Resultado: {n} es un número primo")
+                else:
+                    print(f"Resultado: {n} no es un número primo")
+
+
+
+       
+             elif opcion == "55":
+                # Responsable: Mirko Coca Flores (eq01)
+                from operaciones.rango_lista import rango_lista
+
+                datos = input("Ingrese los números separados por coma: ")
+                valores = [
+                    float(x.strip())for x in datos.split(",")if x.strip()]
+
+                print(f"Resultado: {rango_lista(valores)}")
+                  
+            elif opcion == "56":
+                from operaciones import binario_decimal
+
+                binario = input("Ingrese un número binario: ")
+
+                print(f"Resultado: {binario_decimal.binario_a_decimal(binario)}")
+                
+             # Responsable: Roman Zeballos Dylan Roberto (eq05)
             elif opcion == "46":
                 from operaciones import pitagoras
 
@@ -671,10 +787,10 @@ def main():
                     c = float(input("Ingrese la hipotenusa: "))
                     a = float(input("Ingrese el cateto conocido: "))
                     res = pitagoras.calcular_cateto(c, a)
-                    print(f"Resultado (Cateto faltante): {res}")
-
+                    print(f"Resultado (Cateto faltante): {res}") 
+                
             else:
-                print("opcion no valida")
+               print("Opción no válida")
 
         except ImportError as e:
             print(

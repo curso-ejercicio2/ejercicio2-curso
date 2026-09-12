@@ -43,13 +43,14 @@ def mostrar_menu():
     print("39. Número primo")
     print("40. Promedio exacto")
     print("41. Verificar si un numero es primo")
-    print("42. Determinante de una matriz")
     print("42. División mediante búsqueda binaria")
     print("43. Determinante de una matriz")
-    print("44. Rango de una lista")
+    print("44. Suma de vectores")
+    print("45. Division de decimales")
+    print("46. Desviación estándar")
+    print("47. Rango de una lista")
     print("0. Salir")
     print("===============================")
-
 
 def main():
     while True:
@@ -641,9 +642,48 @@ def main():
 
                 print(f"Resultado: {rango_lista(valores)}")
 
+            elif opcion == "44":
+                # Responsable: Dayana Ibarra Zarate (eq05)
+                from operaciones import sumaDeVectores
+
+                datos_a = input("Ingrese el primer vector (números separados por coma): ")
+                v1 = [float(x.strip()) for x in datos_a.split(",")]
+
+                datos_b = input("Ingrese el segundo vector (números separados por coma): ")
+                v2 = [float(x.strip()) for x in datos_b.split(",")]
+
+                resultado = suma_vectores.sumar_vectores(v1, v2)
+                print(f"Resultado de la suma: {resultado}")
+                
+            elif opcion == "45":
+                # Responsable: Heidy Jhael Flores Tiñini (eq05)
+                from operaciones import division_decimales
+                a = float(input("Ingrese el dividendo: "))
+                b = float(input("Ingrese el divisor: "))
+                res = division_decimales.dividir_decimales(a, b)
+                print(f"Resultado: {a} / {b} = {res:.4f}")
+
+          
+                
+            elif opcion == "46":
+                from operaciones import desviacion_estandar
+                datos = input("Ingrese los números separados por coma: ")
+                lista = [float(x.strip()) for x in datos.split(",")]
+                print(f"Resultado: {desviacion_estandar.calcular_desviacion_estandar(lista)}")
+
+             elif opcion == "47":
+                # Responsable: Mirko Coca Flores (eq01)
+                from operaciones.rango_lista import rango_lista
+
+                datos = input("Ingrese los números separados por coma: ")
+                valores = [
+                    float(x.strip())for x in datos.split(",")if x.strip()]
+
+                print(f"Resultado: {rango_lista(valores)}")    
+                
             else:
-                print("opcion no valida")
- 
+                print("Opción no válida")
+
         except ImportError as e:
             print(
                 f"Error: No se pudo importar el módulo. {e}"

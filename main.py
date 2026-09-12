@@ -48,7 +48,8 @@ def mostrar_menu():
     print("44. Suma de vectores")
     print("45. Division de decimales")
     print("46. Desviación estándar")
-    print("47. Rango de una lista")
+    print("47. Ecuación de segundo grado")
+    print("48. Rango de una lista")
     print("0. Salir")
     print("===============================")
 
@@ -614,7 +615,7 @@ def main():
                 )
 
                 print(f"Cociente: {cociente}")
-                print(f"Residuo: {residuo}") 
+                print(f"Residuo: {residuo}")        
                 
             elif opcion == "43":
                 # Responsable: Vicente Silvestre Velásquez (eq05)
@@ -631,17 +632,7 @@ def main():
                 resultado = determinante_matriz.determinante_matriz(matriz)
 
                 print(f"\nDeterminante de la matriz = {resultado:g}")  
-
-            elif opcion == "44":
-                # Responsable: Mirko Coca Flores (eq01)
-                from operaciones.rango_lista import rango_lista
-
-                datos = input("Ingrese los números separados por coma: ")
-                valores = [
-                    float(x.strip())for x in datos.split(",")if x.strip()]
-
-                print(f"Resultado: {rango_lista(valores)}")
-
+                
             elif opcion == "44":
                 # Responsable: Dayana Ibarra Zarate (eq05)
                 from operaciones import sumaDeVectores
@@ -652,7 +643,7 @@ def main():
                 datos_b = input("Ingrese el segundo vector (números separados por coma): ")
                 v2 = [float(x.strip()) for x in datos_b.split(",")]
 
-                resultado = suma_vectores.sumar_vectores(v1, v2)
+                resultado = sumaDeVectores.sumar_vectores(v1, v2)
                 print(f"Resultado de la suma: {resultado}")
                 
             elif opcion == "45":
@@ -662,16 +653,27 @@ def main():
                 b = float(input("Ingrese el divisor: "))
                 res = division_decimales.dividir_decimales(a, b)
                 print(f"Resultado: {a} / {b} = {res:.4f}")
-
-          
-                
+                                
             elif opcion == "46":
                 from operaciones import desviacion_estandar
                 datos = input("Ingrese los números separados por coma: ")
                 lista = [float(x.strip()) for x in datos.split(",")]
                 print(f"Resultado: {desviacion_estandar.calcular_desviacion_estandar(lista)}")
+                  
+            elif opcion == "47":
+                 #responsable: Deyna Yara Choque Limachi 
+                from operaciones import EcuacionDeSegundoGrado
 
-             elif opcion == "47":
+                a = float(input("Ingrese el coeficiente a: "))
+                b = float(input("Ingrese el coeficiente b: "))
+                c = float(input("Ingrese el coeficiente c: "))
+
+                print(
+                    f"Resultado: "
+                    f"{EcuacionDeSegundoGrado.resolver(a, b, c)}"      
+                  
+
+             elif opcion == "48":
                 # Responsable: Mirko Coca Flores (eq01)
                 from operaciones.rango_lista import rango_lista
 

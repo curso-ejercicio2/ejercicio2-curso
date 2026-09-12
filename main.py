@@ -58,6 +58,7 @@ def mostrar_menu():
     print("54. Verificar número primo")
     print("55. Rango de una lista")
     print("56. Binario a decimal")
+    print("57. Teorema de Pitágoras")
     print("0. Salir")
     print("===============================")
 
@@ -661,7 +662,7 @@ def main():
                 b = float(input("Ingrese el divisor: "))
                 res = division_decimales.dividir_decimales(a, b)
                 print(f"Resultado: {a} / {b} = {res:.4f}")
-                                
+                                          
             elif opcion == "46":
                 from operaciones import desviacion_estandar
                 datos = input("Ingrese los números separados por coma: ")
@@ -766,6 +767,27 @@ def main():
                 binario = input("Ingrese un número binario: ")
 
                 print(f"Resultado: {binario_decimal.binario_a_decimal(binario)}")
+                
+             # Responsable: Roman Zeballos Dylan Roberto (eq05)
+            elif opcion == "57":
+                from operaciones import pitagoras
+
+                print("\n=== TEOREMA DE PITÁGORAS ===")
+                print("1. Calcular Hipotenusa (conociendo ambos catetos)")
+                print("2. Calcular Cateto (conociendo la hipotenusa y un cateto)")
+                sub_opcion = input("Seleccione el caso (1 o 2): ").strip()
+
+                if sub_opcion == "1":
+                    a = float(input("Ingrese el cateto a: "))
+                    b = float(input("Ingrese el cateto b: "))
+                    res = pitagoras.calcular_hipotenusa(a, b)
+                    print(f"Resultado (Hipotenusa): {res}")
+
+                elif sub_opcion == "2":
+                    c = float(input("Ingrese la hipotenusa: "))
+                    a = float(input("Ingrese el cateto conocido: "))
+                    res = pitagoras.calcular_cateto(c, a)
+                    print(f"Resultado (Cateto faltante): {res}") 
                 
             else:
                print("Opción no válida")

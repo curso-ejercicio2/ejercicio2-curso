@@ -769,7 +769,7 @@ def main():
                 print(f"Resultado: {binario_decimal.binario_a_decimal(binario)}")
                 
              # Responsable: Roman Zeballos Dylan Roberto (eq05)
-            elif opcion == "46":
+            elif opcion == "57":
                 from operaciones import pitagoras
 
                 print("\n=== TEOREMA DE PITÁGORAS ===")

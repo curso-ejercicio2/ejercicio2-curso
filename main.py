@@ -588,6 +588,7 @@ def main():
                     print(f"Error: {e}")
 
             elif opcion == "41":
+                # Responsable: Huanca Clemente Nicole (eq06)
                 from operaciones import primo
                 n = int(input("Ingrese el número: "))
                 if primo.es_primo(n):

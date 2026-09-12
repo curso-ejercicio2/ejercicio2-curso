@@ -49,6 +49,7 @@ def mostrar_menu():
     print("45. Division de decimales")
     print("46. Desviación estándar")
     print("47. Ecuación de segundo grado")
+    print("48. Rango de una lista")
     print("0. Salir")
     print("===============================")
 
@@ -630,9 +631,8 @@ def main():
 
                 resultado = determinante_matriz.determinante_matriz(matriz)
 
-                print(f"\nDeterminante de la matriz = {resultado:g}")    
-                  
-
+                print(f"\nDeterminante de la matriz = {resultado:g}")  
+                
             elif opcion == "44":
                 # Responsable: Dayana Ibarra Zarate (eq05)
                 from operaciones import sumaDeVectores
@@ -673,6 +673,16 @@ def main():
                     f"{EcuacionDeSegundoGrado.resolver(a, b, c)}"      
                   
 
+             elif opcion == "48":
+                # Responsable: Mirko Coca Flores (eq01)
+                from operaciones.rango_lista import rango_lista
+
+                datos = input("Ingrese los números separados por coma: ")
+                valores = [
+                    float(x.strip())for x in datos.split(",")if x.strip()]
+
+                print(f"Resultado: {rango_lista(valores)}")    
+                
             else:
                 print("Opción no válida")
 

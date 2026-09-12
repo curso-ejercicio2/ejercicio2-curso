@@ -57,6 +57,7 @@ def mostrar_menu():
     print("53. Sumar fracciones ")
     print("54. Verificar número primo")
     print("55. Rango de una lista")
+    print("56. Binario a decimal")
     print("0. Salir")
     print("===============================")
 
@@ -748,8 +749,7 @@ def main():
 
 
 
-            
-
+       
              elif opcion == "55":
                 # Responsable: Mirko Coca Flores (eq01)
                 from operaciones.rango_lista import rango_lista
@@ -758,10 +758,17 @@ def main():
                 valores = [
                     float(x.strip())for x in datos.split(",")if x.strip()]
 
-                print(f"Resultado: {rango_lista(valores)}")    
+                print(f"Resultado: {rango_lista(valores)}")
+                  
+            elif opcion == "56":
+                from operaciones import binario_decimal
+
+                binario = input("Ingrese un número binario: ")
+
+                print(f"Resultado: {binario_decimal.binario_a_decimal(binario)}")
                 
             else:
-                print("Opción no válida")
+               print("Opción no válida")
 
         except ImportError as e:
             print(

@@ -43,6 +43,7 @@ def mostrar_menu():
     print("39. Número primo")
     print("40. Promedio exacto")
     print("41. Verificar si un numero es primo")
+    print("42. Binario a decimal")
     print("0. Salir")
     print("===============================")
 
@@ -595,6 +596,12 @@ def main():
                     print(f"Resultado: {n} es primo")
                 else:
                     print(f"Resultado: {n} no es primo")
+            elif opcion == "42":
+                from operaciones import binario_decimal
+
+                binario = input("Ingrese un número binario: ")
+
+                print(f"Resultado: {binario_decimal.binario_a_decimal(binario)}")
 
             else:
                 print("opcion no valida")

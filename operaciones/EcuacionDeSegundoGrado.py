@@ -1,5 +1,7 @@
 import math
-
+ #Ecuacion de segundo grado 
+#responsable: Deyna Yara Choque Limachi 
+ 
 
 def resolver(a, b, c):
     discriminante = b**2 - 4 * a * c

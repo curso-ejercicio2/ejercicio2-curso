@@ -1,17 +1,21 @@
 # operaciones/factorial.py - Cálculo de factorial
-# Responsables: Vanessa Flores (eq01), Luis Maturano (eq01)
+# Responsables: Vanessa Flores (eq01), Luis Maturano (eq01), Tais Gemio (eq07)
+
+from math import factorial
+from .validaciones import es_entero, no_negativo
+
+
 def calcular_factorial(n):
     """
-    Calcula el factorial de un número entero no negativo n.
-    Lanza ValueError si n es negativo o no es entero.
+    Calcula el factorial de un número entero no negativo.
     """
-    if n < 0:
-        raise ValueError("El factorial no está definido para números negativos")
-    if n != int(n):
-        raise ValueError("El factorial solo está definido para números enteros")
 
+    # Tais Gemio (eq07): Se mantienen las validaciones
+    # para asegurar que el valor sea entero y no negativo
+    no_negativo(n, "El número")
+    es_entero(n, "El número")
+
+    # Tais Gemio (eq07): Se refactorizó el cálculo manual
+    # utilizando la función factorial de la biblioteca estándar
     n = int(n)
-    resultado = 1
-    for i in range(2, n + 1):
-        resultado *= i
-    return resultado
+    return factorial(n)

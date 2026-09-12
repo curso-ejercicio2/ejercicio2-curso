@@ -45,8 +45,8 @@ def mostrar_menu():
     print("41. Verificar si un numero es primo")
     print("42. División mediante búsqueda binaria")
     print("43. Determinante de una matriz")
-    print("44. Division de decimales")
-    print("45. Suma de vectores")
+    print("44. Suma de vectores")
+    print("45. Division de decimales")
     print("0. Salir")
     print("===============================")
 
@@ -643,6 +643,7 @@ def main():
 
                 resultado = suma_vectores.sumar_vectores(v1, v2)
                 print(f"Resultado de la suma: {resultado}")
+                
             elif opcion == "45":
                 # Responsable: Heidy Jhael Flores Tiñini (eq05)
                 from operaciones import division_decimales

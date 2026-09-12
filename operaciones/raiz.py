@@ -2,7 +2,7 @@
 # Responsable: (eq01)
 # Responsable: Santiago Piscoya (eq02)
 # Responsable: Daniel Flores (eq08)
-
+# Responsable: Dadier Cadima (eq07)
 from .validaciones import es_numero, no_cero
 
 

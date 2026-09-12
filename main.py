@@ -816,11 +816,33 @@ def main():
                     res = pitagoras.calcular_cateto(c, a)
                     print(f"Resultado (Cateto faltante): {res}") 
                 
+            elif opcion == "41":
+                                # Responsable: Huanca Clemente Nicole (eq06)
+                                from operaciones import primo
+                                n = int(input("Ingrese el número: "))
+                                if primo.es_primo(n):
+                                    print(f"Resultado: {n} es primo")
+                                else:
+                                    print(f"Resultado: {n} no es primo")
+
+            elif opcion == "8":
+                                # Responsable: (eq01)             
+                                # Responsable: Dadier Cadima (eq07)
+                                from operaciones import raiz
+                                try:
+                                    num = float(input("Ingrese el número: "))
+                                    ind_str = input("Ingrese el índice (Enter para raíz cuadrada): ")
+                                    ind = float(ind_str) if ind_str.strip() else 2
+                                    print(f"Resultado: {raiz.calcular_raiz(num, ind)}")
+                                except ValueError as e:
+                                    print(f"Error: {e}")
+
             else:
                print("Opción no válida")
 
                 
                 
+                                print("opcion no valida")
         except ImportError as e:
             print(
                 f"Error: No se pudo importar el módulo. {e}"
@@ -839,3 +861,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

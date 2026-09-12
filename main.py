@@ -49,9 +49,16 @@ def mostrar_menu():
     print("45. Division de decimales")
     print("46. Desviación estándar")
     print("47. Ecuación de segundo grado")
-    print("48. Rango de una lista")
-    print("0. Salir")
-    print("===============================")
+    print("48. Número perfecto ")
+    print("49. Multiplicar fracciones ")
+    print("50. Tangente ")
+    print("51. Moda ")
+    print("52. Raíz cuadrada ")
+    print("53. Sumar fracciones ")
+    print("54. Verificar número primo")
+    print("55. Rango de una lista")
+    print("0. Salir")
+    print("===============================")
 
 def main():
     while True:
@@ -671,7 +678,10 @@ def main():
                 print(
                     f"Resultado: "
                     f"{EcuacionDeSegundoGrado.resolver(a, b, c)}"      
-                  
+
+
+
+            
 
              elif opcion == "48":
                 # Responsable: Mirko Coca Flores (eq01)

@@ -43,10 +43,10 @@ def mostrar_menu():
     print("39. Número primo")
     print("40. Promedio exacto")
     print("41. Verificar si un numero es primo")
+    print("42. Determinante de una matriz")
     print("42. División mediante búsqueda binaria")
+    print("43. Determinante de una matriz")
     print("0. Salir")
-    print("0. Salir")
-
     print("===============================")
 
 
@@ -561,7 +561,7 @@ def main():
                 print(
                     f"Resultado decimal: {float(resultado)}"
                 )
-
+            
             elif opcion == "38":
                 # Responsable: Vargas Mercado Miguel Angel (eq07)
                 from operaciones import resta
@@ -612,9 +612,24 @@ def main():
                 )
 
                 print(f"Cociente: {cociente}")
-                print(f"Residuo: {residuo}")            
-            else:
-                print("Opción no válida")        
+                print(f"Residuo: {residuo}") 
+                
+            elif opcion == "43":
+                # Responsable: Vicente Silvestre Velásquez (eq05)
+                from operaciones import determinante_matriz
+
+                matriz = determinante_matriz.leer_matriz()
+
+                print("\nMatriz ingresada:")
+                for fila in matriz:
+                    for elemento in fila:
+                        print(f"{elemento:8g}", end=" ")
+                    print()
+
+                resultado = determinante_matriz.determinante_matriz(matriz)
+
+                print(f"\nDeterminante de la matriz = {resultado:g}")    
+                  
 
             else:
                 print("opcion no valida")

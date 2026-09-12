@@ -41,8 +41,9 @@ def mostrar_menu():
     print("37. Resta de fracciones")
     print("38. Resta de una lista")
     print("39. Número primo")
-    print("40. Determinante de una matriz")
-
+    print("40. Promedio exacto")
+    print("41. Verificar si un numero es primo")
+    print("42. Determinante de una matriz")
     print("0. Salir")
     print("===============================")
 
@@ -516,13 +517,14 @@ def main():
                 lista = [float(x.strip()) for x in datos.split(",")]
                 print(f"Resultado (Suma de pares): {suma.suma_pares(lista)}")
 
+
             elif opcion == "36":
                 # Responsable: Ticona Chura Stefani Mishel (eq04)
                 from operaciones import promedio
                 datos = input("Ingrese los números separados por coma: ")
                 lista = [float(x.strip()) for x in datos.split(",")]
                 print(f"Resultado: {promedio.promedio(lista)}")
-            
+ 
 
             elif opcion == "37":
                 # Responsable: Oliver Cristian Quispe Rocha (eq04)
@@ -558,9 +560,7 @@ def main():
                     f"Resultado decimal: {float(resultado)}"
                 )
 
-            elif opcion == "38":
-
-
+    
                 # Responsable: Vargas Mercado Miguel Angel (eq07)
                 from operaciones import resta
                 datos = input("Ingrese los números separados por coma: ")
@@ -575,9 +575,28 @@ def main():
                 if numero_primo.es_primo(n):
                         print(f"Resultado: {n} es primo")
                 else:
-                        print(f"Resultado: {n} no es primo")  
-                                
+                        print(f"Resultado: {n} no es primo")
+         
+
             elif opcion == "40":
+                # Responsable: Nicole Flores Escalera (eq07)
+                from operaciones import promedio
+                try:
+                    datos = input("Ingrese los números separados por coma: ")
+                    lista = [float(x.strip()) for x in datos.split(",")]
+                    print(f"Resultado: {promedio.promedio_exacto(lista)}")
+                except ValueError as e:
+                    print(f"Error: {e}")
+
+            elif opcion == "41":
+                # Responsable: Huanca Clemente Nicole (eq06)
+                from operaciones import primo
+                n = int(input("Ingrese el número: "))
+                if primo.es_primo(n):
+                    print(f"Resultado: {n} es primo")
+                else:
+                    print(f"Resultado: {n} no es primo")
+            elif opcion == "42":
                 # Responsable: Vicente Silvestre Velásquez (eq05)
                 from operaciones import determinante_matriz
 
@@ -592,9 +611,11 @@ def main():
                 resultado = determinante_matriz.determinante_matriz(matriz)
 
                 print(f"\nDeterminante de la matriz = {resultado:g}")
+
             else:
-                print("Opción no válida")
-            
+                print("opcion no valida")
+ 
+
         except ImportError as e:
             print(
                 f"Error: No se pudo importar el módulo. {e}"
